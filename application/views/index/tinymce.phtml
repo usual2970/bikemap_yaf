@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>囧途网—骑行导航，骑行路线</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="`$site_url~/statics/images/logo_black.png"> 
+    <link href="`$site_url~/statics/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="`$site_url~/statics/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="`$site_url~/statics/css/jt.css" rel="stylesheet" media="screen">
+    <!--[if lt IE 9]>
+      <script src="`$site_url~/statics/js/html5shiv.js"></script>
+      <script src="`$site_url~/statics/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <!--底部-->
+    <div class="container jt-log-wrap">
+      <div class="row">
+        <div class="col-xs-12">
+          <textarea ui-tinymce ng-model="tinymce"></textarea>
+         
+        </div>
+      </div>
+    </div>
+
+    <script src="`$site_url~/statics/js/angular/angular.min.js"></script>
+    <script src="`$site_url~/statics/js/angular/angular-route.js"></script>
+    <script src="`$site_url~/statics/js/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="`$site_url~/statics/js/bower_components/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="`$site_url~/statics/js/bower_components/angular-ui-tinymce/tinymce.js"></script>
+    <script src="`$site_url~/statics/js/mytinymce.js"></script>
+    <script src="`$site_url~/statics/js/jquery-1.7.1.min.js"></script>
+    
+  </body>
+</html>

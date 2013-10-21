@@ -1,0 +1,97 @@
+/**********************公共部分**********************/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { 
+margin: 0; 
+padding: 0; 
+border:none;
+}
+body{
+	font-size:12px;
+	font-family:arial,georgia,arial;
+	background:#fff;
+	
+}
+
+.clearfix:after{ 
+    content:"."; 
+    display:block; 
+    height:0; 
+    clear:both; 
+    visibility:hidden; 
+} 
+ 
+* html .clearfix{ 
+    height:1%; 
+}
+
+#header{
+	width:200px;
+	float:left;
+	text-align:left;
+	border:1px solid #73abcd;
+	height:600px;
+	border-right:5px solid #d2e0f2;
+}
+
+#header #nav_title{
+	height:30px;
+	line-height:30px;
+	border-bottom:1px solid #99bbe8;
+	color:#15428b;
+	font-size:14px;
+	font-weight:bold;
+	background:url(../images/panel_title.png) repeat-x 0 0;
+	padding-left:15px;
+
+}
+#main{
+	float:left;
+	width:900px;
+	height:600px;
+	border:1px solid #73abcd;
+	border-left:none;
+}
+
+#uploadpic{
+	padding:10px;
+}
+
+#menubar{
+	padding:5px 20px;
+	background:#e8e8e8;
+	text-align:left;
+}
+
+#uploadpic #picform{
+	border:1px solid #99bbe8;padding:10px;
+}
+#margin10{
+	height:10px;
+
+}
+
+#uploadpic #picform p{
+	text-align:left;
+	overflow:hidden;
+	border-bottom:1px solid #73abcd;
+	padding:10px;
+}
+
+#uploadpic #picform #pic_name{
+	border:1px solid #73abcd;
+	width:200px;
+	height:30px;
+}
+#uploadpic #picform textarea{
+	width:500px;
+	height:200px;
+	border:1px solid #73abcd;
+}
+#idea_submit{
+	padding-left:25px;
+	cursor:pointer;
+}
+#idea_reset{
+	padding-left:25px;
+	cursor:pointer;
+
+}

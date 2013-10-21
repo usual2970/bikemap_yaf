@@ -1,0 +1,1 @@
+var myAppModule = angular.module('MyApp', ['ui.tinymce'])
