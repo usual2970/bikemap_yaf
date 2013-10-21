@@ -10,12 +10,12 @@ class Session_Memcache
     var $gmtime = 0;
     var $_ip = '';
     
-    function __construct($memcache_servers, $session_name = 'BHB_ID')
+    function __construct($memcache_servers, $session_name = 'jt_id')
     {
         $this->Session_Memcache($memcache_servers, $session_name);
     }
     
-    function Session_Memcache($memcache_server, $session_name = 'BHB_ID',$session_id='')
+    function Session_Memcache($memcache_server, $session_name = 'jt_id',$session_id='')
     {
         // Create memcache object
         if ($this->_memcache === null)

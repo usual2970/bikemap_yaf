@@ -4,7 +4,8 @@ body{
 	margin: 0;
 	padding:0;
 }
-
+.jt-pane{display: none;}
+.active{display: block;}
 .jt-log-wrap{height:1080px;}
 
 .jt-log-box{margin:200px auto;background:transparent;width: 300px;padding:20px;overflow:hidden;color:#fff;background:rgba(0,0,0,0.4);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#66000000',EndColorStr='#66000000')}

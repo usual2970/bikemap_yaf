@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-21 09:41:48
+<?php /* Smarty version 2.6.28, created on 2013-10-21 14:14:07
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html ng-app>
@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <title>囧途网—骑行、旅行路线分享，骑行、旅行路线查询</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="<?php echo $this->_tpl_vars['site_url']; ?>
-/statics/images/logo_black.png"> 
+    <link rel="shortcut icon" href="img/fav.jpg"> 
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     <link href="css/jt.css" rel="stylesheet" media="screen">

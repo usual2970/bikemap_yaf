@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-21 10:32:33
+<?php /* Smarty version 2.6.28, created on 2013-10-21 14:23:20
          compiled from index%5Clogreg.phtml */ ?>
 <!DOCTYPE html>
 <html ng-app="logreg">
@@ -7,7 +7,7 @@
     <title>囧途网—骑行导航，骑行路线</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="<?php echo $this->_tpl_vars['url']; ?>
-/img/logo_black.png"> 
+/img/fav.jpg"> 
     <link href="<?php echo $this->_tpl_vars['url']; ?>
 /css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="<?php echo $this->_tpl_vars['url']; ?>
