@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-21 14:14:07
+<?php /* Smarty version 2.6.28, created on 2013-10-22 05:21:25
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
-<html ng-app>
+<html>
   <head>
     <meta charset="utf-8">
     <title>囧途网—骑行、旅行路线分享，骑行、旅行路线查询</title>
@@ -404,10 +404,7 @@
       </div>
     </footer>
 
-    <script src="js/angular.min.js"></script>
     <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.js"></script>
   </body>
 </html>
