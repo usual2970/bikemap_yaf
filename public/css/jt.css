@@ -28,6 +28,7 @@
 .jt-ml-10{margin-left:10px;}
 .jt-ml-45{margin-left:45px;}
 .jt-mt-10{margin-top:10px;}
+.jt-mt-15{margin-top:15px;}
 .jt-mt-20{margin-top:20px;}
 .jt-ml-48{margin-left:48px;}
 .jt-ml-65{margin-left:65px;}
@@ -35,3 +36,25 @@
 
 
 .jt-color-f{color:#fff;}
+
+.jt-sign-sina{
+	display: inline-block;
+	width: 21px;
+	height: 19px;
+	margin-right: 2px;
+	vertical-align: -4px;
+	background-position: -17px -1px;
+}
+.jt-sign-qq{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	vertical-align: -2px;
+	background-position: -90px 0;
+}
+
+.jt-sign{
+	display: inline-block;
+	background-image: url(../img/signup.png);
+	background-repeat: no-repeat;
+}

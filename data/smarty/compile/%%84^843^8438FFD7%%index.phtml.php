@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-22 05:21:25
+<?php /* Smarty version 2.6.28, created on 2013-10-22 15:35:39
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <title>囧途网—骑行、旅行路线分享，骑行、旅行路线查询</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="qc:admins" content="572443431762765476375" />
+    <meta property="wb:webmaster" content="84f2eb93bde9bc5c" />
     <link rel="shortcut icon" href="img/fav.jpg"> 
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
@@ -61,9 +63,10 @@
           <div class="col-md-2">
           
               
-                <div class="jt-mt-10">
-                  <a class="btn btn-info btn-sm" href="/user#reg">注册</button></a>
-                  <a class="btn btn-success btn-sm" href="/user">登录</button></a>
+                <div class="jt-mt-15">
+                  <span class="text-muted"><small>社区账号登录：</small></span>
+                  <a href="javascript:void(0);" title="QQ账号登录"><i class="jt-sign jt-sign-qq"></i></a>
+                  <a href="javascript:void(0);" title="新浪账号登录"><i class="jt-sign jt-sign-sina"></i></a>
                 </div>
                
            
