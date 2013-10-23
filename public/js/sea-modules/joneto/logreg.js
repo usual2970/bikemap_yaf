@@ -9,6 +9,19 @@ define(function(require,exports,module){
     window.location.hash=newhash;
     selectop(newhash);
   });
+  var logdata=[];
+  logdata.sina={client_id:"2002777054",redirect_uri:"http://www.joneto.com/user/reg",response_type:"code"};
+  $(".jt-sign").click(function(){
+    var data=eval("("+$(this).attr("data-attr")+")");
+    var temp=logdata[data.logtype]
+    var uri_arr=[];
+    for(var k in temp){
+     uri_arr.push(k+"="+temp[k]);
+    }
+    window.open(data.request_url+uri_arr.join("&"),"_blank","top=200,left=400,width=600,height=380,directories=no,menubar=no,toolbar=no");
+    return false;
+  });
+
 
   function selectop(hash){
     if(hash=="" || hash=="#log"){

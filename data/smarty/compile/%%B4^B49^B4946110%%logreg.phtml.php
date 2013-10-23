@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-23 05:25:03
+<?php /* Smarty version 2.6.28, created on 2013-10-23 15:13:59
          compiled from index%5Clogreg.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -53,8 +53,8 @@
 
             </form>
             <div class="jt-mt-10"><span class="text-muted"><small>社区账号直接登录：</small></span>
-                  <a href="javascript:void(0);" title="QQ账号登录"><i class="jt-sign jt-sign-qq"></i></a>
-                  <a href="javascript:void(0);" title="新浪账号登录"><i class="jt-sign jt-sign-sina"></i></a></div>
+                  <a href="javascript:void(0);" title="QQ账号登录"><i data-attr="{logtype:'qq'}" class="jt-sign jt-sign-qq"></i></a>
+                  <a href="javascript:void(0);" title="新浪账号登录"><i data-attr="{logtype:'sina',request_url:'https://api.weibo.com/oauth2/authorize?'}" class="jt-sign jt-sign-sina"></i></a></div>
           </div>
 
           <div class="col-xs-12 reg-box" style="display:none;">
@@ -80,8 +80,8 @@
 
             </form>
             <div class="jt-mt-10"><span class="text-muted"><small>社区账号直接登录：</small></span>
-                  <a href="javascript:void(0);" title="QQ账号登录"><i class="jt-sign jt-sign-qq"></i></a>
-                  <a href="javascript:void(0);" title="新浪账号登录"><i class="jt-sign jt-sign-sina"></i></a></div>
+                  <a href="javascript:void(0);" title="QQ账号登录"><i data-attr="{logtype:'qq'}" class="jt-sign jt-sign-qq"></i></a>
+                  <a href="javascript:void(0);" title="新浪账号登录"><i data-attr="{logtype:'sina',request_url:'https://api.weibo.com/oauth2/authorize?'}" class="jt-sign jt-sign-sina"></i></a></div>
           </div>
 
         </div>

@@ -15,6 +15,25 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract {
 		}
 	}
 
+	public function getParam($name,$default=false){
+		if($default===false){
+			return $this->getRequest()->getParam($name);
+		}
+		return $this->getRequest()->getParam($name,$default);
+		
+	}
+
+
+	public function getRequests(){
+		return $this->getRequest()->getRequest();
+	}
+
+	public function getQuery($name,$default=false){
+		if($default===false){
+			return $this->getRequest()->getQuery($name);
+		}
+		return $this->getRequest()->getQuery($name,$default);
+	}
 	/**
 	 * 注册变量到模板
 	 * @param str|array $pKey
