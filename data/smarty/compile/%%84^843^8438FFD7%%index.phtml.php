@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-22 15:35:39
+<?php /* Smarty version 2.6.28, created on 2013-10-23 03:28:45
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -62,11 +62,9 @@
 
           <div class="col-md-2">
           
-              
-                <div class="jt-mt-15">
-                  <span class="text-muted"><small>社区账号登录：</small></span>
-                  <a href="javascript:void(0);" title="QQ账号登录"><i class="jt-sign jt-sign-qq"></i></a>
-                  <a href="javascript:void(0);" title="新浪账号登录"><i class="jt-sign jt-sign-sina"></i></a>
+                <div class="jt-mt-10">
+                  <a class="btn btn-info btn-sm" href="/user#reg">注册</button></a>
+                  <a class="btn btn-success btn-sm" href="/user">登录</button></a>
                 </div>
                
            

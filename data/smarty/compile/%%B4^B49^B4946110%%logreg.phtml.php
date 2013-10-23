@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-22 05:37:44
+<?php /* Smarty version 2.6.28, created on 2013-10-23 05:25:03
          compiled from index%5Clogreg.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
           <div class="col-xs-12">
             <ul class="nav nav-tabs">
               <li><a href="javascript:void(0);" class="jt-color-f" alt="log">登录囧途</a></li>
-              <li><a href="javascript:void(0);" class="jt-color-f" alt="reg">注册</a></li>
+              <li><a href="javascript:void(0);" class="jt-color-f" alt="reg">快速注册</a></li>
             </ul>
            
           </div>
@@ -52,13 +52,21 @@
                <button type="submit" class="btn btn-warning" style="width:100%;">登录</button>
 
             </form>
+            <div class="jt-mt-10"><span class="text-muted"><small>社区账号直接登录：</small></span>
+                  <a href="javascript:void(0);" title="QQ账号登录"><i class="jt-sign jt-sign-qq"></i></a>
+                  <a href="javascript:void(0);" title="新浪账号登录"><i class="jt-sign jt-sign-sina"></i></a></div>
           </div>
 
           <div class="col-xs-12 reg-box" style="display:none;">
             <form class="jt-form" role="form-reg" id="regform">
               <div class="form-group clearfix">
+                <label for="user_name" class="jt-label-normal">用户名：</label>
+                  <input type="text" class="form-control" id="user_name" name="user_name" placeholder="请输入用户名..." required/>
+                
+              </div>
+              <div class="form-group clearfix">
                 <label for="email" class="jt-label-normal">邮箱：</label>
-                  <input type="email" class="form-control" id="email" name="jone" placeholder="请输入邮箱..." required/>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="请输入邮箱..." required/>
                 
               </div>
 
@@ -71,6 +79,9 @@
                <button type="submit" class="btn btn-warning" style="width:100%;">注册</button>
 
             </form>
+            <div class="jt-mt-10"><span class="text-muted"><small>社区账号直接登录：</small></span>
+                  <a href="javascript:void(0);" title="QQ账号登录"><i class="jt-sign jt-sign-qq"></i></a>
+                  <a href="javascript:void(0);" title="新浪账号登录"><i class="jt-sign jt-sign-sina"></i></a></div>
           </div>
 
         </div>
