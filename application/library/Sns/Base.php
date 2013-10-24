@@ -43,7 +43,6 @@ class Sns_Base {
 	    $post_string = $this->create_post_string($method, $params);
 
 	$url = $this->_rest_url . $url_addtion;
-
 	if ($post_string === false) {
 	    $this->set_err(1003, "No REST Method found.");
 	    return false;
@@ -60,7 +59,6 @@ class Sns_Base {
 	$method = strtolower($method);
 	if ($method == "get")
 	    $url = $url . "?" . $post_string;
-
 	$result = "";
 	if (function_exists('curl_init')) {
 	    $timeout = $connectTimeout + $readTimeout;

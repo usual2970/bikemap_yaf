@@ -10,7 +10,7 @@ define(function(require,exports,module){
     selectop(newhash);
   });
   var logdata=[];
-  logdata.sina={client_id:"2002777054",redirect_uri:"http://www.joneto.com/user/reg",response_type:"code"};
+  logdata.sina={client_id:"2002777054",redirect_uri:"http://www.joneto.com/user/sinacode",response_type:"code"};
   $(".jt-sign").click(function(){
     var data=eval("("+$(this).attr("data-attr")+")");
     var temp=logdata[data.logtype]

@@ -40,11 +40,11 @@ class taobao extends kra_base {
 			$top_parameters = base64_decode(rawurldecode($_REQUEST['top_parameters']));
 			parse_str($top_parameters, $arr_params);
 			if (is_array($arr_params)) {
-			if ($arr_params['visitor_id']) {
-				$this->_user[uid] = $arr_params['visitor_id'];
-				$this->_user[nickname] = $arr_params['visitor_nick'];
-	    		set_cookie("sspara", $_REQUEST['top_parameters']);
-			}
+				if ($arr_params['visitor_id']) {
+					$this->_user[uid] = $arr_params['visitor_id'];
+					$this->_user[nickname] = $arr_params['visitor_nick'];
+		    		set_cookie("sspara", $_REQUEST['top_parameters']);
+				}
 			}
 		}
     }

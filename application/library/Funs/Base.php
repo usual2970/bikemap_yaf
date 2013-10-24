@@ -357,6 +357,9 @@ static function get_cityinfo($ip="",$weather=false){
 	}
 	return $city_info;
 }
+static function set_cookie($name,$key,$expir=3600){
+    setcookie($name,$key,time()+$expir,"/",".joneto.com");
+}
 }
 
 ?>
