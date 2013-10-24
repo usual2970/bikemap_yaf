@@ -52,18 +52,20 @@
           </div>
 
           <div class="col-md-2">
+            `if !$smarty.session.id~
           
                 <div class="jt-mt-10">
                   <a class="btn btn-info btn-sm" href="/user#reg">注册</button></a>
                   <a class="btn btn-success btn-sm" href="/user">登录</button></a>
                 </div>
-               
-           
-            <!--<nav class="navbar-collapse bs-navbar-collapse" role="navigation">
+            `else~
+            <nav class="navbar-collapse bs-navbar-collapse" role="navigation">
               <ul class="nav navbar-nav pull-left">
                 <li class="dropdown">
                   
-                    <a class="dropdown-toggle" type="text" data-toggle="dropdown" href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span>
+                    <a class="dropdown-toggle" type="text" data-toggle="dropdown" href="javascript:void(0);">
+                      `if !$smarty.session.avatar~<span class="glyphicon glyphicon-user"></span>`else~
+                      <img src="`$smarty.session.avatar~" width="20" height="20"/>`/if~
                      &nbsp;&nbsp;刘旋尧 <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -71,13 +73,14 @@
                       <li><a href="#">Another action</a></li>
                       <li><a href="#">Something else here</a></li>
                       <li class="divider"></li>
-                      <li><a href="#">退出</a></li>
+                      <li><a href="`$url~/user/logout">退出</a></li>
                     </ul>
                   
 
                 </li>
               </ul>
-            </nav>-->
+            </nav>
+            `/if~
           </div>
           
         </div>
@@ -396,7 +399,17 @@
       </div>
     </footer>
 
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/holder.js"></script>
+    <script src="`$url~/js/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+    <script>
+      seajs.config({
+        base: "`$url~/js/sea-modules/",
+        alias: {
+          "jquery": "jquery/jquery/1.10.1/jquery.js"
+        }
+      })
+
+      seajs.use("joneto/index");
+
+    </script>
   </body>
 </html>

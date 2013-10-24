@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-23 03:28:45
+<?php /* Smarty version 2.6.28, created on 2013-10-24 13:07:04
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -61,18 +61,21 @@
           </div>
 
           <div class="col-md-2">
+            <?php if (! $_SESSION['id']): ?>
           
                 <div class="jt-mt-10">
                   <a class="btn btn-info btn-sm" href="/user#reg">注册</button></a>
                   <a class="btn btn-success btn-sm" href="/user">登录</button></a>
                 </div>
-               
-           
-            <!--<nav class="navbar-collapse bs-navbar-collapse" role="navigation">
+            <?php else: ?>
+            <nav class="navbar-collapse bs-navbar-collapse" role="navigation">
               <ul class="nav navbar-nav pull-left">
                 <li class="dropdown">
                   
-                    <a class="dropdown-toggle" type="text" data-toggle="dropdown" href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span>
+                    <a class="dropdown-toggle" type="text" data-toggle="dropdown" href="javascript:void(0);">
+                      <?php if (! $_SESSION['avatar']): ?><span class="glyphicon glyphicon-user"></span><?php else: ?>
+                      <img src="<?php echo $_SESSION['avatar']; ?>
+" width="20" height="20"/><?php endif; ?>
                      &nbsp;&nbsp;刘旋尧 <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -80,13 +83,15 @@
                       <li><a href="#">Another action</a></li>
                       <li><a href="#">Something else here</a></li>
                       <li class="divider"></li>
-                      <li><a href="#">退出</a></li>
+                      <li><a href="<?php echo $this->_tpl_vars['url']; ?>
+/user/logout">退出</a></li>
                     </ul>
                   
 
                 </li>
               </ul>
-            </nav>-->
+            </nav>
+            <?php endif; ?>
           </div>
           
         </div>
@@ -405,7 +410,19 @@
       </div>
     </footer>
 
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/holder.js"></script>
+    <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+    <script>
+      seajs.config({
+        base: "<?php echo $this->_tpl_vars['url']; ?>
+/js/sea-modules/",
+        alias: {
+          "jquery": "jquery/jquery/1.10.1/jquery.js"
+        }
+      })
+
+      seajs.use("joneto/index");
+
+    </script>
   </body>
 </html>

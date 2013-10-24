@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-24 05:49:15
+<?php /* Smarty version 2.6.28, created on 2013-10-24 13:04:57
          compiled from user%5Csinacode.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +20,8 @@
   <body>
     <p>连接成功，正在跳转中。。。<p/>
     <script>
+      var isreg="<?php echo $this->_tpl_vars['isreg']; ?>
+";
       var pwindow=window.opener;
       pwindow.location.href="http://www.joneto.com";
       setTimeout(function(){
