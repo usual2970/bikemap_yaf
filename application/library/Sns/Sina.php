@@ -20,10 +20,10 @@ class Sns_Sina extends Sns_Base{
 			$this->_session_key = $sess["access_token"];
 	    	Funs_Base::set_cookie("ssid", $this->_session_key);
 	    	$this->_user=$sess["uid"];
-	    	Funs_Base::set_cookie("suid", $this->_user);
+	    	Funs_Base::set_cookie("suid", base64_encode($this->_user));
 		} elseif ($_COOKIE['ssid']) {
 			$this->_session_key = $_COOKIE['ssid'];
-			$this->_user = $_COOKIE['suid'];
+			$this->_user = base64_decode($_COOKIE['suid']);
 		}
     }
 	protected function create_post_string($method, $params) {

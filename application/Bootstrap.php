@@ -24,6 +24,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 	public function _initSmarty(Yaf_Dispatcher $dispatcher){
 		$view= new Smarty_Adapter(null, Yaf_Registry::get("config")->get("smarty"));
 	    Yaf_Dispatcher::getInstance()->setView($view);
+	    Yaf_Dispatcher::getInstance()->disableView();
 	}
 
 	public function _initSession(Yaf_Dispatcher $dispatcher){
