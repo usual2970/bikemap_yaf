@@ -44,6 +44,11 @@ class UserController extends Ctrl_Base {
 		$this->display("sinacode");
 	}
 
+
+	function improveAction(){
+		$this->display("improve");
+	}
+
 	public function logregAction(){
 		$this->display("logreg");
 	}
