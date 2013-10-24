@@ -21,8 +21,8 @@ class UserController extends Ctrl_Base {
 		Yaf_Registry::set('sess',$rs);
 		$sns=new Sns_Kra("sina",$conf["client_id"],$conf["client_secret"]);
 		$user_info=$sns->get_user_info();
-		var_dump($user_info);
-		return false;
+		//var_dump($user_info);
+		return true;
 	}
 
 	public function sinaregAction(){
