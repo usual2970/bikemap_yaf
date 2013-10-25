@@ -34,12 +34,19 @@ class UserController extends Ctrl_Base {
 				"create_time"=>time()
 			);
 			$user_obj->save($data);
+			$this->assign("isreg",0);
 			
 		}
 		else{
+			$this->assign("isreg",1);
 			$this->_set_session($rs);
 		}
 		$this->display("sinacode");
+	}
+
+
+	function improveAction(){
+		$this->display("improve");
 	}
 
 	public function logregAction(){
@@ -52,7 +59,7 @@ class UserController extends Ctrl_Base {
 		}
 	}
 
-	public function logout(){
+	public function logoutAction(){
 		session_destroy();
 		$this->redirect("/");
 	}
