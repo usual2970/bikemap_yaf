@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-25 04:22:00
+<?php /* Smarty version 2.6.28, created on 2013-10-25 04:27:07
          compiled from user%5Cimprove.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -332,7 +332,7 @@
                
 
                  <i class="jt-sign jt-sign-<?php echo $this->_tpl_vars['user_info']['sns']; ?>
-"></i><span><?php echo $this->_tpl_vars['user_info']['user_name']; ?>
+"></i><span>&nbsp;<?php echo $this->_tpl_vars['user_info']['user_name']; ?>
 </span><button type="submit" class="btn btn-warning pull-right">完成注册</button>
 
               </form>
