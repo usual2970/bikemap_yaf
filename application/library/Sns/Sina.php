@@ -21,6 +21,7 @@ class Sns_Sina extends Sns_Base{
 	    	Funs_Base::set_cookie("ssid", $this->_session_key);
 	    	$this->_user=$sess["uid"];
 	    	Funs_Base::set_cookie("suid", base64_encode($this->_user));
+	    	Funs_Base::set_cookie("sns", base64_encode("sina"));
 		} elseif ($_COOKIE['ssid']) {
 			$this->_session_key = $_COOKIE['ssid'];
 			$this->_user = base64_decode($_COOKIE['suid']);

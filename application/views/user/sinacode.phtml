@@ -17,7 +17,14 @@
     <script>
       var isreg="`$isreg~";
       var pwindow=window.opener;
-      pwindow.location.href="http://www.joneto.com";
+      if(isreg==1){
+        pwindow.location.href="http://www.joneto.com";
+      }
+      else{
+        pwindow.location.href="http://www.joneto.com/user/improve";
+      }
+      
+      
       setTimeout(function(){
         window.close();
       },1000);

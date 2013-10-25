@@ -10,6 +10,7 @@
 .jt-bt{border-top:1px solid #ccc;}
 
 .jt-avatar-40{width:40px;height:40px;}
+.jt-avatar-120{width:120px;height:120px;}
 .jt-avatar-25{width:25px;height:25px;margin:3px 10px;}
 .jt-wt-40{width:40px;}
 
@@ -33,6 +34,9 @@
 .jt-ml-48{margin-left:48px;}
 .jt-ml-65{margin-left:65px;}
 .jt-pl-10{padding-left:10px;}
+.jt-ml-150{margin-left:150px;}
+
+.jt-ov-hid{overflow: hidden;}
 
 
 .jt-color-f{color:#fff;}

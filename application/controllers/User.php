@@ -37,6 +37,9 @@ class UserController extends Ctrl_Base {
 			$this->assign("isreg",0);
 			
 		}
+		elseif(!empty($rs) && !$rs["actived"]){
+			$this->assign("isreg",0);
+		}
 		else{
 			$this->assign("isreg",1);
 			$this->_set_session($rs);
@@ -46,6 +49,11 @@ class UserController extends Ctrl_Base {
 
 
 	function improveAction(){
+		$sns_id=base64_decode($_COOKIE["suid"]);
+		$sns=base64_decode($_COOKIE["sns"]);
+		$user_obj=new UserModel();
+		$rs=$user_obj->where("sns_id='{$sns_id}' and sns='sina'")->fRow();
+		$this->assign("user_info",$rs);
 		$this->display("improve");
 	}
 

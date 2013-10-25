@@ -12,3 +12,5 @@ body{
 .jt-form{padding:20px 0 0;}
 
 .jt-label-normal{font-weight: normal;}
+
+.jt-improve-box{margin:150px auto;background:transparent;width: 500px;padding:20px;overflow:hidden;color:#fff;background:rgba(0,0,0,0.4);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#66000000',EndColorStr='#66000000')}
