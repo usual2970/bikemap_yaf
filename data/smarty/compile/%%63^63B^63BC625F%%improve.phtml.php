@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-25 04:27:07
+<?php /* Smarty version 2.6.28, created on 2013-10-25 06:44:36
          compiled from user%5Cimprove.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -17,8 +17,10 @@
     <link href="<?php echo $this->_tpl_vars['url']; ?>
 /css/jt.css" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/html5shiv.js"></script>
+      <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -27,7 +29,7 @@
       <div class="jt-improve-box" ng-controller="LogregCtrl">
         <div class="row">
           <div class="col-xs-12">
-            <p>完善资料</p>
+            <h4>完善资料</h4>
           </div>
           <hr>
         </div>
@@ -37,27 +39,27 @@
 " class="jt-avatar-120 img-rounded"/></div>
 
             <div class="jt-ml-150">
-              <form role="form-log" id="logform">
+              <form role="form-log" id="regform" method="post" action="/user/improve">
                 <div class="form-group clearfix jt-ov-hid">
                   <label for="password" class="jt-label-normal sr-only">邮箱：</label>
-                    <input type="email" class="form-control" id="email" name="to" placeholder="邮箱" required/>
+                    <input type="email" class="form-control" id="email" name="to" placeholder="邮箱" />
                   
                 </div>
                 <div class="form-group clearfix jt-ov-hid">
                   <label for="username" class="jt-label-normal sr-only">姓名：</label>
-                    <div class="pull-left" style="width:30%;"><input type="text" ng-pattern="word" class="form-control" id="username" name="jone" placeholder="姓" required/></div>
+                    <div class="pull-left" style="width:30%;"><input type="text" ng-pattern="word" class="form-control" id="username" name="jone" placeholder="姓"/></div>
                     
-                     <div class="pull-right"><input type="text" ng-pattern="word" class="form-control" id="username" name="jone" placeholder="名" required/></div>
+                     <div class="pull-right"><input type="text" ng-pattern="word" class="form-control" id="username" name="jone" placeholder="名" /></div>
                 </div>
 
                 <div class="form-group clearfix">
                   <label class="radio-inline">
-                    <input type="radio" name="gender" value="w">女
+                    <input type="radio" name="gender" value="w" checked="checked">女
                   </label>
                   <label class="radio-inline">
                     <input type="radio" name="gender" value="m">男
                   </label>
-                  <select class="form-control pull-right" style="width:50%;">
+                  <select class="form-control pull-right" style="width:50%;" name="">
                     <option value="">选择行业</option>
                     <option value="高新科技">高新科技</option>
 
@@ -326,14 +328,14 @@
 
                 <div class="form-group clearfix jt-ov-hid">
                   <label for="password" class="jt-label-normal sr-only">自我介绍：</label>
-                    <input type="text" class="form-control" id="email" name="to" placeholder="一句话介绍自己" required/>
+                    <input type="text" class="form-control" id="email" name="instruct" placeholder="一句话介绍自己"/>
                   
                 </div>
                
 
                  <i class="jt-sign jt-sign-<?php echo $this->_tpl_vars['user_info']['sns']; ?>
 "></i><span>&nbsp;<?php echo $this->_tpl_vars['user_info']['user_name']; ?>
-</span><button type="submit" class="btn btn-warning pull-right">完成注册</button>
+</span><button type="submit" class="btn btn-warning pull-right" id="complete_reg">完成注册</button>
 
               </form>
             </div>
@@ -353,7 +355,7 @@
         }
       })
 
-      seajs.use("joneto/logreg");
+      seajs.use("joneto/improve");
     </script>
   </body>
 </html>

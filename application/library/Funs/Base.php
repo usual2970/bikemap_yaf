@@ -360,6 +360,16 @@ static function get_cityinfo($ip="",$weather=false){
 static function set_cookie($name,$key,$expir=3600){
     setcookie($name,$key,time()+$expir,"/",".joneto.com");
 }
+
+
+static function test_email($email){
+    return preg_match("/^\w+?\@\w+?\.\w{1,10}$/i",$email);
+}
+
+static function test_txt($txt,$len=60){
+    $pat="/\w".$len."/";
+    return preg_match($pat,$txt);
+}
 }
 
 ?>

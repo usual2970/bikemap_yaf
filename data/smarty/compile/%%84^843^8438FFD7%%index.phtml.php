@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-24 13:07:04
+<?php /* Smarty version 2.6.28, created on 2013-10-25 05:48:03
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -13,10 +13,8 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     <link href="css/jt.css" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
-      <script src="<?php echo $this->_tpl_vars['site_url']; ?>
-/statics/js/html5shiv.js"></script>
-      <script src="<?php echo $this->_tpl_vars['site_url']; ?>
-/statics/js/respond.min.js"></script>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -399,7 +397,7 @@
     </div>
     <!--底部-->
 
-    <footer class="jt-footer">
+    <div class="jt-footer">
       <div class="container">
 
         <div class="row">
@@ -408,7 +406,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/sea-modules/seajs/seajs/2.1.1/sea.js"></script>

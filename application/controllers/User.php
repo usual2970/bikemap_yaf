@@ -49,12 +49,25 @@ class UserController extends Ctrl_Base {
 
 
 	function improveAction(){
+		if(!$_COOKIE["suid"]){
+			$this->redirect("/user");
+			return false;
+		}
 		$sns_id=base64_decode($_COOKIE["suid"]);
 		$sns=base64_decode($_COOKIE["sns"]);
 		$user_obj=new UserModel();
 		$rs=$user_obj->where("sns_id='{$sns_id}' and sns='sina'")->fRow();
-		$this->assign("user_info",$rs);
-		$this->display("improve");
+		if($this->getRequest()->isXmlHttpRequest()){
+			$req=$this->getRequests();
+
+		}
+		else{
+
+			$this->assign("user_info",$rs);
+			$this->display("improve");
+		}
+		
+		
 	}
 
 	public function logregAction(){
