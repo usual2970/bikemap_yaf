@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-24 05:49:15
+<?php /* Smarty version 2.6.28, created on 2013-10-24 10:08:23
          compiled from user%5Csinacode.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
       pwindow.location.href="http://www.joneto.com";
       setTimeout(function(){
         window.close();
-      },2000);
+      },1000);
       
     </script>
   </body>
