@@ -324,7 +324,11 @@ static function http($url, $method, $postfields = NULL,$timeout = 5,$headers = a
                 $url      = "{$url}?{$postfields}";
             }
             break;
+        case 'GET':
+            $url.="?".$postfields;
+            break;
     }
+    var_dump($url);
     curl_setopt($ci, CURLOPT_URL, $url);
     curl_setopt($ci, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ci, CURLINFO_HEADER_OUT, false);
