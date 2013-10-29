@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-25 06:44:36
+<?php /* Smarty version 2.6.28, created on 2013-10-29 08:18:16
          compiled from user%5Cimprove.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -40,16 +40,19 @@
 
             <div class="jt-ml-150">
               <form role="form-log" id="regform" method="post" action="/user/improve">
+                <div class="alert alert-warning collapse" id="jt-form-alert">
+                    
+                  </div>
                 <div class="form-group clearfix jt-ov-hid">
                   <label for="password" class="jt-label-normal sr-only">邮箱：</label>
-                    <input type="email" class="form-control" id="email" name="to" placeholder="邮箱" />
+                    <input type="text" class="form-control" id="email" name="email" placeholder="邮箱" />
                   
                 </div>
                 <div class="form-group clearfix jt-ov-hid">
                   <label for="username" class="jt-label-normal sr-only">姓名：</label>
-                    <div class="pull-left" style="width:30%;"><input type="text" ng-pattern="word" class="form-control" id="username" name="jone" placeholder="姓"/></div>
+                    <div class="pull-left" style="width:30%;"><input type="text" ng-pattern="word" class="form-control" id="username" name="surname" placeholder="姓"/></div>
                     
-                     <div class="pull-right"><input type="text" ng-pattern="word" class="form-control" id="username" name="jone" placeholder="名" /></div>
+                     <div class="pull-right"><input type="text" ng-pattern="word" class="form-control" id="username" name="name" placeholder="名" /></div>
                 </div>
 
                 <div class="form-group clearfix">
@@ -59,7 +62,7 @@
                   <label class="radio-inline">
                     <input type="radio" name="gender" value="m">男
                   </label>
-                  <select class="form-control pull-right" style="width:50%;" name="">
+                  <select class="form-control pull-right" style="width:50%;" name="industry">
                     <option value="">选择行业</option>
                     <option value="高新科技">高新科技</option>
 
@@ -352,7 +355,8 @@
 /js/sea-modules/",
         alias: {
           "jquery": "jquery/jquery/1.10.1/jquery.js"
-        }
+        },
+        preload:["jquery"]
       })
 
       seajs.use("joneto/improve");

@@ -14,7 +14,11 @@ class UserModel extends Orm_Base{
 		"sns_id"=>array("type"=>"char(20)","comment"=>"null"),
 		"sns"=>array("type"=>"char(10)","comment"=>"null"),
 		"sns_profile"=>array("type"=>"char(100)","comment"=>"null"),
-		"create_time"=>array("type"=>"int(10)","comment"=>"null")
+		"create_time"=>array("type"=>"int(10)","comment"=>"null"),
+		"actived"=>array("type"=>"tinyint(1)","comment"=>"null"),
+		"instruct"=>array("type"=>"char(255)","comment"=>"null"),
+		"industry"=>array("type"=>"char(30)","comment"=>"null"),
+		"real_name"=>array("type"=>"char(50)","comment"=>"null")
 	);
 
 	public $pk="id";

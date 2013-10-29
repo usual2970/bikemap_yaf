@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-25 01:38:27
+<?php /* Smarty version 2.6.28, created on 2013-10-29 07:29:53
          compiled from user%5Csinacode.phtml */ ?>
 <!DOCTYPE html>
 <html>

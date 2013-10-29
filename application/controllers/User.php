@@ -105,6 +105,23 @@ class UserController extends Ctrl_Base {
 		$rs=$user_obj->where("sns_id='{$sns_id}' and sns='sina'")->fRow();
 		if($this->getRequest()->isXmlHttpRequest()){
 			$req=$this->getRequests();
+			extract($req);
+			$this->_check_email($email);
+			if(!$surname) $this->ajax("随便填写个姓氏吧",1);
+			if(!$name) $this->ajax("随便填写个名字吧",1);
+			if(!$industry) $this->ajax("随便选择个行业吧",1);
+			if(!$instruct) $this->ajax("随便填写个介绍吧",1);
+			$rs["email"]=$email;
+			$rs["real_name"]=$surname.$name;
+			$rs["industry"]=$industry;
+			$rs["instruct"]=$instruct;
+			$rs["actived"]=1;
+			$rs["gender"]=$gender;
+			if($ret=$user_obj->where("sns_id='{$sns_id}' and sns='sina'")->update($rs)){
+				$this->_set_session($rs);
+				$this->ajax("success");
+			}
+			$this->ajax("完善资料失败，再试一下","1");
 
 		}
 		else{
@@ -130,4 +147,24 @@ class UserController extends Ctrl_Base {
 		session_destroy();
 		$this->redirect("/");
 	}
+
+	function _check_email($email){
+		if(!$email) $this->ajax("邮箱不能为空",1);
+		if(!preg_match("/\w+?\@\w+?\.\w{2,8}/", $email)){
+			$this->ajax("邮箱格式不正确",2);
+		}
+		$user_obj=new UserModel();
+		$rs=$user_obj->where("email='{$email}'")->fRow();
+		if(!empty($rs)){
+			$this->ajax("邮箱已注册过",3);
+		}
+	}
+
+	function check_emailAction(){
+
+		$email=$this->getQuery("email");
+		$this->_check_email($email);
+		$this->ajax("success",0);
+	}
+
 }
