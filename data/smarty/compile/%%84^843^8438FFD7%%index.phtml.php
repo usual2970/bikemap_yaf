@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version 2.6.28, created on 2013-10-29 05:31:49
+=======
+<?php /* Smarty version 2.6.28, created on 2013-10-26 14:15:47
+>>>>>>> 2f4f0012b0f545b86e79edc8372a47dd3bace0c1
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -416,7 +420,8 @@
 /js/sea-modules/",
         alias: {
           "jquery": "jquery/jquery/1.10.1/jquery.js"
-        }
+        },
+        preload:["jquery"]
       })
 
       seajs.use("joneto/index");

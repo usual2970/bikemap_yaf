@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-23 15:13:59
+<?php /* Smarty version 2.6.28, created on 2013-10-26 14:24:12
          compiled from index%5Clogreg.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,7 @@
 
             </form>
             <div class="jt-mt-10"><span class="text-muted"><small>社区账号直接登录：</small></span>
-                  <a href="javascript:void(0);" title="QQ账号登录"><i data-attr="{logtype:'qq'}" class="jt-sign jt-sign-qq"></i></a>
+                  <a href="javascript:void(0);" title="QQ账号登录"><i data-attr="{logtype:'qq',request_url:'https://graph.qq.com/oauth2.0/authorize?'}" class="jt-sign jt-sign-qq"></i></a>
                   <a href="javascript:void(0);" title="新浪账号登录"><i data-attr="{logtype:'sina',request_url:'https://api.weibo.com/oauth2/authorize?'}" class="jt-sign jt-sign-sina"></i></a></div>
           </div>
 

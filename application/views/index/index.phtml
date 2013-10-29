@@ -405,7 +405,8 @@
         base: "`$url~/js/sea-modules/",
         alias: {
           "jquery": "jquery/jquery/1.10.1/jquery.js"
-        }
+        },
+        preload:["jquery"]
       })
 
       seajs.use("joneto/index");
