@@ -1,10 +1,10 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-25 05:48:03
+<?php /* Smarty version 2.6.28, created on 2013-10-29 05:31:49
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>囧途网—骑行、旅行路线分享，骑行、旅行路线查询</title>
+    <title>囧途网—囧途中的囧图集,囧文集,旅途百科,驴友集散地</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="qc:admins" content="572443431762765476375" />
     <meta property="wb:webmaster" content="84f2eb93bde9bc5c" />
