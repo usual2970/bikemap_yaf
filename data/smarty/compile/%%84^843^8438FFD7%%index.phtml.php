@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-29 06:31:39
+<?php /* Smarty version 2.6.28, created on 2013-10-30 07:43:56
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
   </head>
   <body>
     <!--头部-->
-    <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="row">
           <div class="col-md-1">
@@ -43,7 +43,7 @@
           </div>
 
 
-          <div class="col-md-5">
+          <div class="col-md-4">
             <nav class="navbar-collapse bs-navbar-collapse" role="navigation">
               <ul class="nav navbar-nav pull-left">
                 <li class="active"><a href="<?php echo $this->_tpl_vars['site_url']; ?>
@@ -58,7 +58,7 @@
             </nav>
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-3">
             <?php if (! $_SESSION['id']): ?>
           
                 <div class="jt-mt-10">
@@ -66,15 +66,16 @@
                   <a class="btn btn-success btn-sm" href="/user">登录</button></a>
                 </div>
             <?php else: ?>
-            <nav class="navbar-collapse bs-navbar-collapse" role="navigation">
-              <ul class="nav navbar-nav pull-left">
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
                 <li class="dropdown">
                   
-                    <a class="dropdown-toggle" type="text" data-toggle="dropdown" href="javascript:void(0);">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="menu">
                       <?php if (! $_SESSION['avatar']): ?><span class="glyphicon glyphicon-user"></span><?php else: ?>
                       <img src="<?php echo $_SESSION['avatar']; ?>
 " width="20" height="20"/><?php endif; ?>
-                     &nbsp;&nbsp;刘旋尧 <span class="caret"></span>
+                     &nbsp;&nbsp;<?php echo $_SESSION['user_name']; ?>
+ <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <li><a href="#">Action</a></li>
@@ -84,11 +85,10 @@
                       <li><a href="<?php echo $this->_tpl_vars['url']; ?>
 /user/logout">退出</a></li>
                     </ul>
-                  
 
                 </li>
               </ul>
-            </nav>
+            </div>
             <?php endif; ?>
           </div>
           

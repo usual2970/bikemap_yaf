@@ -301,7 +301,7 @@ static function myTime()
 
 
 /* 请求函数，（连接超时3，请求超时5） */
-static function http($url, $method, $postfields = NULL,$timeout = 5,$headers = array()){
+static function http($url, $method="GET", $postfields = NULL,$timeout = 5,$headers = array()){
     $ci = curl_init();
     curl_setopt($ci, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
     curl_setopt($ci, CURLOPT_USERAGENT, 'PAY CURL ROOT');

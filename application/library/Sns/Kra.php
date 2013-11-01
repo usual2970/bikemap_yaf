@@ -10,6 +10,7 @@ class Sns_Kra {
 	'taobao' => 'Taobao',
 	'qzone' => 'Tencent',
 	'renren' => 'Renren',
+	'qq'=>'Qq',
 	'sina'=>'Sina'
     );
 

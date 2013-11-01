@@ -11,7 +11,7 @@ define(function(require,exports,module){
   });
   var logdata=[];
   logdata.sina={client_id:"2002777054",redirect_uri:"http://www.joneto.com/user/sinacode",response_type:"code"};
-  logdata.qq={client_id:"1101081324",redirect_uri:"http://www.joneto.com/user/qqcode",response_type:"code",state:"adsfjoneto"};
+  logdata.qq={client_id:"100548186",redirect_uri:"http://www.joneto.com/user/qqcode",response_type:"code",state:"adsfjoneto"};
   $(".jt-sign").click(function(){
     var data=eval("("+$(this).attr("data-attr")+")");
     var temp=logdata[data.logtype]

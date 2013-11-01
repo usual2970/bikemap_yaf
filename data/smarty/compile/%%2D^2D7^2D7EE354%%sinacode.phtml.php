@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-29 07:29:53
+<?php /* Smarty version 2.6.28, created on 2013-11-01 05:54:21
          compiled from user%5Csinacode.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -31,9 +31,9 @@
       }
       
       
-      setTimeout(function(){
-        window.close();
-      },1000);
+      // setTimeout(function(){
+      //   window.close();
+      // },1000);
       
     </script>
   </body>
