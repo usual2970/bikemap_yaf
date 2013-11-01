@@ -31,19 +31,17 @@ class UserController extends Ctrl_Base {
 				"sns_profile"=>$user_info["profile_url"],
 				"avatar"=>$user_info["avatar_hd"],
 				"address"=>$user_info["location"],
-				"create_time"=>time()
+				"create_time"=>time(),
+				"actived"=>1
 			);
-			$user_obj->save($data);
-			$this->assign("isreg",0);
-			
-		}
-		elseif(!empty($rs) && !$rs["actived"]){
-			$this->assign("isreg",0);
+			$user_id=$user_obj->save($data);
+			$data["id"]=$user_id;
+			$this->_set_session($data);
 		}
 		else{
-			$this->assign("isreg",1);
 			$this->_set_session($rs);
 		}
+		$this->assign("isreg",1);
 		$this->display("sinacode");
 	}
 
@@ -89,19 +87,17 @@ class UserController extends Ctrl_Base {
 				//"sns_profile"=>$user_info["profile_url"],
 				"avatar"=>$user_info["figureurl_qq_2"],
 				//"address"=>$user_info["location"],
-				"create_time"=>time()
+				"create_time"=>time(),
+				"actived"=>1
 			);
-			$user_obj->save($data);
-			$this->assign("isreg",0);
-			
-		}
-		elseif(!empty($rs) && !$rs["actived"]){
-			$this->assign("isreg",0);
+			$user_id=$user_obj->save($data);
+			$data["id"]=$user_id;
+			$this->_set_session($data);
 		}
 		else{
-			$this->assign("isreg",1);
 			$this->_set_session($rs);
 		}
+		$this->assign("isreg",1);
 		$this->display("sinacode");
 	}
 
