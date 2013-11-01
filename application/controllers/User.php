@@ -79,7 +79,7 @@ class UserController extends Ctrl_Base {
 		$user_info=$sns->get_user_info();
 		//判断用户是否注册过
 		$user_obj=new UserModel();
-		$rs=$user_obj->where("sns_id='{$res['openid']}' and sns='sina'")->fRow();
+		$rs=$user_obj->where("sns_id='{$res['openid']}' and sns='qq'")->fRow();
 		if(empty($rs)){
 			$data=array(
 				"user_name"=>$user_info["nickname"],
