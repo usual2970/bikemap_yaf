@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-10-30 07:43:56
+<?php /* Smarty version 2.6.28, created on 2013-11-08 05:57:10
          compiled from index%5Cindex.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
   </head>
   <body>
     <!--头部-->
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="jt-navbar navbar-fixed-top">
       <div class="container">
         <div class="row">
           <div class="col-md-1">
@@ -423,5 +423,11 @@
       seajs.use("joneto/index");
 
     </script>
+
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4c42ddf892cc186c28070d3ae395e0d9' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
   </body>
 </html>
