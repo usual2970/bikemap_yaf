@@ -38,6 +38,10 @@ border-bottom-color: #fff;
 }
 .jt-navbar .navbar-brand{color:#999;}
 .jt-navbar .navbar-brand:hover{color:#fff;}
+.jt-navbar a:hover .caret {
+border-top-color: #fff;
+border-bottom-color: #fff;
+}
 .jt-details{
 	margin: 8px 0 0;
 	height: 22px;
