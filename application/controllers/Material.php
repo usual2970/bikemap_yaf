@@ -1,10 +1,7 @@
 <?php
-class Material extends Ctrl_User{
-	function __construct(){
-		parent::__construct();
-	}
-	function index(){
-		echo "12341";
+class Material extends Ctrl_Base{
+	public function indexAction(){
+		var_dump(12341234);
 	}
 }
 
