@@ -16,7 +16,7 @@ class SamplePlugin extends Yaf_Plugin_Abstract {
 
 	public function dispatchLoopStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
 		if($request->controller=="Material" && !isset($_SESSION["user_name"])){
-			$response->setRedirect("http://www.joneto.com/");
+			$response->setRedirect("http://www.joneto.com/user");
 		}
 		 
 	}

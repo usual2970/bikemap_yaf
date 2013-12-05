@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-04 06:27:20
+<?php /* Smarty version 2.6.28, created on 2013-12-05 06:10:53
          compiled from index/header.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="img/fav.jpg"> 
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="css/uc.css" rel="stylesheet" media="screen">
     <link href="css/jt.css" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
