@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-05 07:45:16
+<?php /* Smarty version 2.6.28, created on 2013-12-06 06:17:22
          compiled from index/ucmenu.phtml */ ?>
 <div class="col-md-3">
 	<div class="bs-sidebar hidden-print affix" role="complementary">
 		<ul class="nav bs-sidenav">
 
 			<li class="active">
-				<a href="#download">下载Bootstrap</a>
+				<a href="#download">管理</a>
 				<ul class="nav">
 					<li class="">
 						<a href="#download-compiled">编译后的CSS、JS和字体文件</a>
@@ -19,7 +19,7 @@
 				</ul>
 			</li>
 			<li class="">
-				<a href="#whats-included">包含了哪些文件</a>
+				<a href="#whats-included">设置</a>
 			</li>
 			<li class="">
 				<a href="#template">基本模版</a>
