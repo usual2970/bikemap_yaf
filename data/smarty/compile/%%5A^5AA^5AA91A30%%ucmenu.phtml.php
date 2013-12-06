@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-05 07:45:16
+<?php /* Smarty version 2.6.28, created on 2013-12-06 13:48:01
          compiled from index/ucmenu.phtml */ ?>
 <div class="col-md-3">
 	<div class="bs-sidebar hidden-print affix" role="complementary">
