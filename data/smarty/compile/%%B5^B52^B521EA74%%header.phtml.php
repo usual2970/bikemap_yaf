@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-06 13:48:01
+<?php /* Smarty version 2.6.28, created on 2013-12-06 13:51:36
          compiled from index/header.phtml */ ?>
 <!DOCTYPE html>
 <html>
