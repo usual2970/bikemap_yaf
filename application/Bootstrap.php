@@ -29,7 +29,8 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 
 	public function _initSession(Yaf_Dispatcher $dispatcher){
 		$conf=Yaf_Registry::get("config")->get("session")->memcache->toArray();
-		$sess=new Session_Memcache( $conf["dns"],$conf["name"]);
+		$sess_id=isset($_REQUEST["jt_id"])?$_REQUEST["jt_id"]:"";
+		$sess=new Session_Memcache( $conf["dns"],$conf["name"],$sess_id);
 		$sess->my_session_start();
 		Yaf_Registry::set('session_id', $sess->session_id);
 	}

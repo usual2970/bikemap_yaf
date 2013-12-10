@@ -1,7 +1,6 @@
 <?php
 class MaterialController extends Ctrl_Base{
 	public function indexAction(){
-		var_dump(Yaf_Registry::get('session_id'));
 		$this->assign("jt",Yaf_Registry::get('session_id'));
 		$this->display("index");
 	}
