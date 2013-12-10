@@ -72,6 +72,7 @@ class Session_Memcache
             if ($this->gen_session_key($tmp_session_id) == substr($this->session_id, 32))
             {
                 $this->session_id = $tmp_session_id;
+                session_id($this->session_id . $this->gen_session_key($this->session_id));
             }
             else
             {

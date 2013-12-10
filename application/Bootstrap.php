@@ -14,7 +14,15 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 		$arrConfig = Yaf_Application::app()->getConfig();
 		Yaf_Registry::set('config', $arrConfig);
 	}
-
+	public function _initSession(Yaf_Dispatcher $dispatcher){
+		//$conf=Yaf_Registry::get("config")->get("session")->memcache->toArray();
+		$sess_id=isset($_REQUEST["jt_id"])?$_REQUEST["jt_id"]:"";
+		if($sess_id) session_id($sess_id);
+		session_start();
+		// $sess=new Session_Memcache( $conf["dns"],$conf["name"],$sess_id);
+		// $sess->my_session_start();
+		Yaf_Registry::set('session_id', $sess_id);
+	}
 	public function _initPlugin(Yaf_Dispatcher $dispatcher) {
 		//注册一个插件
 		$objSamplePlugin = new SamplePlugin();
@@ -27,13 +35,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 	    Yaf_Dispatcher::getInstance()->disableView();
 	}
 
-	public function _initSession(Yaf_Dispatcher $dispatcher){
-		$conf=Yaf_Registry::get("config")->get("session")->memcache->toArray();
-		$sess_id=isset($_REQUEST["jt_id"])?$_REQUEST["jt_id"]:"";
-		$sess=new Session_Memcache( $conf["dns"],$conf["name"],$sess_id);
-		$sess->my_session_start();
-		Yaf_Registry::set('session_id', $sess->session_id);
-	}
+	
 
 	public function _initRoute(Yaf_Dispatcher $dispatcher) {
 		 $router = Yaf_Dispatcher::getInstance()->getRouter();

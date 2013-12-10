@@ -18,7 +18,6 @@ class SamplePlugin extends Yaf_Plugin_Abstract {
 		if($request->controller=="Material" && !isset($_SESSION["user_name"])){
 			$response->setRedirect("http://www.joneto.com/user");
 		}
-		 
 	}
 
 	public function preDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
