@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?php /* Smarty version 2.6.28, created on 2013-12-06 13:51:36
-=======
-<?php /* Smarty version 2.6.28, created on 2013-12-10 02:28:51
->>>>>>> ef6cf1afe50d9cc8d1e3f070d7e0d1f8dacb905c
+<?php /* Smarty version 2.6.28, created on 2013-12-10 12:52:32
          compiled from index/footer.phtml */ ?>
     <div class="jt-footer">
       <div class="container">

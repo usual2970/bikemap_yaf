@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-10 08:48:47
+<?php /* Smarty version 2.6.28, created on 2013-12-10 12:55:45
          compiled from material%5Cindex.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -50,6 +50,9 @@ unset($_smarty_tpl_vars);
               <?php endforeach; endif; unset($_from); ?>
             </table>
           </p>
+          <hr>
+          <div style="position:relative;"><div style="position:absolute;right:20px;top:0px;"><?php echo $this->_tpl_vars['page_str']; ?>
+</div></div>
         </div>
         <div class="tab-pane fade" id="profile">
           <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>

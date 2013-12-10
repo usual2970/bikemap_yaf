@@ -1,5 +1,5 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-06 21:20:00
-         compiled from index/logreg.phtml */ ?>
+<?php /* Smarty version 2.6.28, created on 2013-12-10 12:52:35
+         compiled from index%5Clogreg.phtml */ ?>
 <!DOCTYPE html>
 <html>
   <head>

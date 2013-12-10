@@ -1,5 +1,5 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-08 08:14:15
-         compiled from user/sinacode.phtml */ ?>
+<?php /* Smarty version 2.6.28, created on 2013-12-10 12:52:42
+         compiled from user%5Csinacode.phtml */ ?>
 <!DOCTYPE html>
 <html>
   <head>
