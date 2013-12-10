@@ -11,11 +11,9 @@
         
       </ul>
       <div id="myTabContent" class="tab-content" style="background:#f7f5fa;padding:10px;height:100%;">
-        <div class="tab-pane fade active in" id="home">
-          <p id="filelist"></p>
-          <p id="container">
-            <button class="button btn-default btn-sm" id="upload">上传图片</button>&nbsp;&nbsp;<em class="text-muted">大小: 不超过2M,    格式: bmp, png, jpeg, jpg, gif</em>
-          </p>
+        <div class="tab-pane fade active in" id="home" style="position:relative">
+          <div id="container">
+          </div><em class="text-muted" style="position:absolute;left:120px;top:5px;">大小: 不超过2M,    格式: bmp, png, jpeg, jpg, gif</em>
           <hr>
 
         </div>
@@ -28,5 +26,8 @@
 		</div>
 	</div>
 
+</div>
+<div style="display:none">
+<input type="hidden" id="joneto" value="`$jt~">
 </div>
 `include file=index/footer.phtml~

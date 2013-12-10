@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-09 07:56:06
+<?php /* Smarty version 2.6.28, created on 2013-12-10 03:51:42
          compiled from material%5Cindex.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -21,11 +21,9 @@ unset($_smarty_tpl_vars);
         
       </ul>
       <div id="myTabContent" class="tab-content" style="background:#f7f5fa;padding:10px;height:100%;">
-        <div class="tab-pane fade active in" id="home">
-          <p id="filelist"></p>
-          <p id="container">
-            <button class="button btn-default btn-sm" id="upload">上传图片</button>&nbsp;&nbsp;<em class="text-muted">大小: 不超过2M,    格式: bmp, png, jpeg, jpg, gif</em>
-          </p>
+        <div class="tab-pane fade active in" id="home" style="position:relative">
+          <div id="container">
+          </div><em class="text-muted" style="position:absolute;left:120px;top:5px;">大小: 不超过2M,    格式: bmp, png, jpeg, jpg, gif</em>
           <hr>
 
         </div>
@@ -38,6 +36,10 @@ unset($_smarty_tpl_vars);
 		</div>
 	</div>
 
+</div>
+<div style="display:none">
+<input type="hidden" id="joneto" value="<?php echo $this->_tpl_vars['jt']; ?>
+">
 </div>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/footer.phtml", 'smarty_include_vars' => array()));

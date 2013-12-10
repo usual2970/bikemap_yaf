@@ -15,6 +15,11 @@ class SamplePlugin extends Yaf_Plugin_Abstract {
 	}
 
 	public function dispatchLoopStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+		if(isset($_REQUEST["jt_id"])){
+			$conf=Yaf_Registry::get("config")->get("session")->memcache->toArray();
+			$sess=new Session_Memcache( $conf["dns"],$conf["name"],$_REQUEST["jt_id"]);
+			$sess->my_session_start();
+		}
 		if($request->controller=="Material" && !isset($_SESSION["user_name"])){
 			$response->setRedirect("http://www.joneto.com/user");
 		}

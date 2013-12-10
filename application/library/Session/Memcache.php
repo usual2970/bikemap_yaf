@@ -86,6 +86,7 @@ class Session_Memcache
             /*setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), 0,
                 $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);*/
         }
+
     }
     
     /**
