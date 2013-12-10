@@ -59,7 +59,10 @@
 		uploader      : 'http://www.joneto.com/material/upload',
 		width         : 120,
 		buttonText	  : "上传图片",
-		formData	  : {"jt_id":$("#joneto").val()}
+		formData	  : {"jt_id":$("#joneto").val()},
+		onQueueComplete:function(data){
+			window.location.reload();
+		}
 	});
 })
 
