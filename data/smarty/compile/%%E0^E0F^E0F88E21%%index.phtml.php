@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-10 12:55:45
+<?php /* Smarty version 2.6.28, created on 2013-12-10 14:23:14
          compiled from material%5Cindex.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -23,13 +23,13 @@ unset($_smarty_tpl_vars);
       <div id="myTabContent" class="tab-content" style="padding:10px;height:100%;">
         <div class="tab-pane fade active in" id="home" style="position:relative">
           <div id="container">
-          </div><em class="text-muted" style="position:absolute;left:120px;top:5px;">大小: 不超过2M,    格式:  png, jpeg, jpg, gif</em>
+          </div><em class="text-muted" style="position:absolute;left:50px;top:5px;">大小: 不超过2M,    格式:  png, jpeg, jpg, gif</em>
 
           <div style="position:absolute;right:20px;top:0px;"><?php echo $this->_tpl_vars['page_str']; ?>
 </div>
 
           <p>
-            <table class="table">
+            <table class="table" id="pictures">
               <?php $_from = $this->_tpl_vars['imgs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['img']):
 ?>
@@ -45,7 +45,15 @@ unset($_smarty_tpl_vars);
                 <td width="25%">
                   <h4><?php echo $this->_tpl_vars['img']['size']; ?>
 <em class="text-muted">bytes</em></h4>
-                </td><td></td>
+                </td>
+                <td>
+                  <h4 class="text-center" id="pic-op" style="display:none;">
+                    <a href="/material/saveimg/id/<?php echo $this->_tpl_vars['img']['id']; ?>
+" class="text-muted" target="_blank"><span class="glyphicon glyphicon-save"></span></a>&nbsp;&nbsp;
+                    <a href="javascript:void(0);" class="text-muted" id="delimg" data-id="<?php echo $this->_tpl_vars['img']['id']; ?>
+"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
+                  </h4>
+                </td>
               </tr>
               <?php endforeach; endif; unset($_from); ?>
             </table>

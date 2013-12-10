@@ -59,6 +59,26 @@ class MaterialController extends Ctrl_Base{
             echo 'Invalid file type.';
         }
 	}
+
+    public function delimgAction(){
+        $id=$this->getParam("id");
+        $img_obj=new ImgModel();
+        echo $img_obj->where("id={$id}")->del();
+
+    }
+
+
+    public function saveimgAction(){
+        header('Content-type: image/jpeg');
+        
+        $img_obj=new ImgModel();
+        $id=$this->getParam("id");
+        $rs=$img_obj->where("id={$id}")->fRow();
+
+        header("Content-Disposition: attachment; filename={$rs['img_name']}");
+
+        @readfile($rs["img_big"]);
+    }
 }
 
 ?>
