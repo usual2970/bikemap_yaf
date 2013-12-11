@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-10 12:52:32
+<?php /* Smarty version 2.6.28, created on 2013-12-11 02:51:30
          compiled from index/header.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -9,10 +9,16 @@
     <meta property="qc:admins" content="572443431762765476375" />
     <meta property="wb:webmaster" content="84f2eb93bde9bc5c" />
     <link rel="shortcut icon" href="img/fav.jpg"> 
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-    <link href="css/uc.css" rel="stylesheet" media="screen">
-    <link href="css/jt.css" rel="stylesheet" media="screen">
+    <link href="<?php echo $this->_tpl_vars['url']; ?>
+/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="<?php echo $this->_tpl_vars['url']; ?>
+/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="<?php echo $this->_tpl_vars['url']; ?>
+/css/uc.css" rel="stylesheet" media="screen">
+    <link href="<?php echo $this->_tpl_vars['url']; ?>
+/css/jt.css" rel="stylesheet" media="screen">
+    <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/jquery.js"></script>
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>

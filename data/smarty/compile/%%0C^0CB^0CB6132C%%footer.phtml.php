@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-10 12:52:32
+<?php /* Smarty version 2.6.28, created on 2013-12-11 02:32:06
          compiled from index/footer.phtml */ ?>
     <div class="jt-footer">
       <div class="container">
@@ -12,8 +12,7 @@
       </div>
     </div>
 
-    <script src="<?php echo $this->_tpl_vars['url']; ?>
-/js/jquery.js"></script>
+    
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/bootstrap.min.js"></script>
     <script src="<?php echo $this->_tpl_vars['url']; ?>

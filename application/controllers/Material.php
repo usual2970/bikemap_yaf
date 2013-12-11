@@ -79,6 +79,11 @@ class MaterialController extends Ctrl_Base{
 
         @readfile($rs["img_big"]);
     }
+
+
+    public function mapAction(){
+        $this->display("map");
+    }
 }
 
 ?>
