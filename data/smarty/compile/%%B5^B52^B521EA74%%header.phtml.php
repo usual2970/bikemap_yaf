@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-11 02:51:30
+<?php /* Smarty version 2.6.28, created on 2013-12-19 05:48:43
          compiled from index/header.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,10 @@
 /css/jt.css" rel="stylesheet" media="screen">
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/jquery.js"></script>
+    <script>
+      var site_url="<?php echo $this->_tpl_vars['url']; ?>
+";
+    </script>
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -53,13 +57,13 @@
           <div class="col-md-4">
             <nav class="navbar-collapse bs-navbar-collapse" role="navigation">
               <ul class="nav navbar-nav pull-left">
-                <li class="active"><a href="<?php echo $this->_tpl_vars['site_url']; ?>
+                <li class="active"><a href="<?php echo $this->_tpl_vars['url']; ?>
 ">首页</a></li>
-                <li><a href="<?php echo $this->_tpl_vars['site_url']; ?>
+                <li><a href="<?php echo $this->_tpl_vars['url']; ?>
 ">活动</a></li>
-                <li><a href="<?php echo $this->_tpl_vars['site_url']; ?>
+                <li><a href="<?php echo $this->_tpl_vars['url']; ?>
 ">地图查询</a></li>
-                <li><a href="<?php echo $this->_tpl_vars['site_url']; ?>
+                <li><a href="<?php echo $this->_tpl_vars['url']; ?>
 ">帮助</a></li>
               </ul>
             </nav>

@@ -1,2 +1,10 @@
-var mp = new BMap.Map('line-map');  
-mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11); 
+$(document).ready(function(){
+	$(document).on("click","#line-add",function(){
+		var left=($(window).width()-1024)/2;
+		var wh=$(window).height();
+		var ww=$(window).width();
+		var overlay="<div style='width:"+ww+"px;height:"+wh+"px;top:0;left:0;z-index:10;position:absolute;'></div>";
+		$(overlay).css({"opacity":0.5,"background":"#000"}).appendTo("body");
+		window.open(site_url+"/material/addline","_blank","top=0,left=0,width="+ww+",height="+wh+",directories=no,menubar=no,toolbar=no");
+	});
+});

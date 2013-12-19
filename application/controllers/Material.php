@@ -1,5 +1,6 @@
 <?php
 class MaterialController extends Ctrl_Base{
+    //图片列表
 	public function indexAction(){
 		$page=intval($this->getQuery("page"));
 		if(!$page) $page=1;
@@ -23,7 +24,7 @@ class MaterialController extends Ctrl_Base{
 		$this->assign("jt",Yaf_Registry::get('session_id'));
 		$this->display("index");
 	}
-
+    //上传图片
 	public function uploadAction(){
 
         $tempFile = $_FILES['Filedata']['tmp_name'];
@@ -59,7 +60,7 @@ class MaterialController extends Ctrl_Base{
             echo 'Invalid file type.';
         }
 	}
-
+    //删除图片
     public function delimgAction(){
         $id=$this->getParam("id");
         $img_obj=new ImgModel();
@@ -67,7 +68,7 @@ class MaterialController extends Ctrl_Base{
 
     }
 
-
+    //保存图片
     public function saveimgAction(){
         header('Content-type: image/jpeg');
         
@@ -80,9 +81,13 @@ class MaterialController extends Ctrl_Base{
         @readfile($rs["img_big"]);
     }
 
-
+    //路线列表
     public function mapAction(){
         $this->display("map");
+    }
+    //新增路线
+    public function addlineAction(){
+        $this->display("addline");
     }
 }
 
