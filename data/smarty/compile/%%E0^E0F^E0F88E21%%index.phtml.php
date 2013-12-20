@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-11 02:55:42
+<?php /* Smarty version 2.6.28, created on 2013-12-20 02:34:51
          compiled from material%5Cindex.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -74,6 +74,44 @@ unset($_smarty_tpl_vars);
 <input type="hidden" id="joneto" value="<?php echo $this->_tpl_vars['jt']; ?>
 ">
 </div>
+<script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/uploadify/jquery.uploadify.min.js"></script>
+<script>
+$(document).ready(function(){
+  setTimeout(function () {
+      $('.bs-top').affix()
+    }, 100)
+
+    $("#container").uploadify({
+      height        : 30,
+      swf           : 'http://www.joneto.com/js/uploadify/uploadify.swf',
+      uploader      : 'http://www.joneto.com/material/upload',
+      width         : 50,
+      buttonText    : "上传",
+      formData    : {"jt_id":$("#joneto").val()},
+      onQueueComplete:function(data){
+        window.location.reload();
+      }
+    });
+
+    $("#pictures tr").hover(
+      function(){
+        $(this).css({"background":"#f5f5f5"}).find("#pic-op").show();
+      },
+      function(){
+        $(this).css({"background":"#ffffff"}).find("#pic-op").hide();
+      }
+
+    );
+
+    $("#delimg").click(function(){
+      var id=$(this).attr("data-id");
+      $.get("/material/delimg/id/"+id,function(){
+        window.location.reload();
+      });
+    });
+});
+</script>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/footer.phtml", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

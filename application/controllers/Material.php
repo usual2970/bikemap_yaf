@@ -87,6 +87,18 @@ class MaterialController extends Ctrl_Base{
     }
     //新增路线
     public function addlineAction(){
+        $ip=Funs_Base::real_ip();
+        $conf=Yaf_Registry::get("config")->get("sns")->get("baidu")->toArray();
+        $sns=new Sns_Kra("baidu",$conf["ak"],$conf["sn"]);
+        $location=$sns->get_location_by_ip($ip);
+        $point=array();
+        if($location["status"]!=0){
+            $point=array("x"=>"120.21937542","y"=>"30.25924446");
+        }
+        else{
+            $point=$location["content"]["point"];
+        }
+        $this->assign("point",json_encode($point));
         $this->display("addline");
     }
 }

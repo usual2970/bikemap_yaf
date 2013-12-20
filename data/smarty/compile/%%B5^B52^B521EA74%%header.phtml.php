@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-19 05:48:43
+<?php /* Smarty version 2.6.28, created on 2013-12-20 02:36:13
          compiled from index/header.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -6,11 +6,10 @@
     <meta charset="utf-8">
     <title>囧途网—囧途中的囧图集,囧文集,旅途百科,驴友集散地</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="qc:admins" content="572443431762765476375" />
-    <meta property="wb:webmaster" content="84f2eb93bde9bc5c" />
-    <link rel="shortcut icon" href="img/fav.jpg"> 
+    <link rel="shortcut icon" href="<?php echo $this->_tpl_vars['url']; ?>
+/img/fav.jpg"> 
     <link href="<?php echo $this->_tpl_vars['url']; ?>
-/css/bootstrap.min.css" rel="stylesheet" media="screen">
+/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
     <link href="<?php echo $this->_tpl_vars['url']; ?>
 /css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     <link href="<?php echo $this->_tpl_vars['url']; ?>
@@ -24,8 +23,10 @@
 ";
     </script>
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/html5shiv.js"></script>
+      <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>

@@ -2,11 +2,10 @@ $(document).ready(function(){
   var wh=$(window).height();
   var mh=wh-100;
   $(".line-main,.line-left").css("height",mh+"px");
-
   //百度地图
   var map = new BMap.Map("line-map");            // 创建Map实例
-  var point = new BMap.Point(116.404, 39.915);    // 创建点坐标
-  map.centerAndZoom(point,15);                     // 初始化地图,设置中心点坐标和地图级别。
+  var point = new BMap.Point(curl_point.x, curl_point.y);    // 创建点坐标
+  map.centerAndZoom(point,14);                     // 初始化地图,设置中心点坐标和地图级别。
   map.enableScrollWheelZoom();  
 });
 function myexit()   

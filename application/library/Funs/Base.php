@@ -67,7 +67,7 @@ static function real_ip()
 
     preg_match("/[\d\.]{7,15}/", $realip, $onlineip);
     $realip = !empty($onlineip[0]) ? $onlineip[0] : '0.0.0.0';
-
+    if($realip=="127.0.0.1") $realip="183.129.226.50";
     return $realip;
 }
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-19 07:22:37
+<?php /* Smarty version 2.6.28, created on 2013-12-20 05:31:06
          compiled from material%5Cmap.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -27,7 +27,7 @@ unset($_smarty_tpl_vars);
           <div style="height:500px;" id="line-map">
             <p><button class="btn btn-default" id="line-add"><span class="glyphicon glyphicon-plus"></span>新增路线</button></p>
             <hr/>
-
+            
           </div>
 
         </div>
@@ -38,10 +38,6 @@ unset($_smarty_tpl_vars);
 		</div>
 	</div>
 
-</div>
-<div style="display:none">
-<input type="hidden" id="joneto" value="<?php echo $this->_tpl_vars['jt']; ?>
-">
 </div>
 <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/map.js"></script>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-19 09:06:11
+<?php /* Smarty version 2.6.28, created on 2013-12-20 06:33:22
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -19,15 +19,20 @@
     <script>
       var site_url="<?php echo $this->_tpl_vars['url']; ?>
 ";
+      var curl_point='<?php echo $this->_tpl_vars['point']; ?>
+';
+      curl_point=eval("("+curl_point+")");
     </script>
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/html5shiv.js"></script>
+      <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/respond.min.js"></script>
     <![endif]-->
   </head>
   <body onbeforeunload="event.returnValue=myexit()">
     <div class="line-wrap clearfix">
-      <div class="line-top panel panel-info">
+      <div class="line-top">
         <div style="padding:20px 0 0 100px;float:left;"><img src="<?php echo $this->_tpl_vars['url']; ?>
 /img/logo.png"></div>
         <div style="margin-left:350px;padding:30px 0 0 200px;">
@@ -35,11 +40,41 @@
           <button class="btn btn-primary btn-lg">保存路书</button>
         </div>
       </div>
-      <div class="line-left panel panel-info">
+      <div class="line-left panel panel-default">
+        <div class="panel-heading"><span class="text-info"><span class="glyphicon glyphicon-pencil"></span>填写路书基本信息</span></div>
+        <div class="panel-body">
+          <div style="padding:0 15px;">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="line-name" class="control-label">名称:<span class="text-muted">（如：清明湖州到杭州）</span></label>
+              <input type="email" class="form-control" id="line-name" placeholder="名称">
+            </div>
+            <div class="form-group">
+              <label for="line-start" class="control-label">起点:</label>
+              <input type="text" class="form-control" id="line-start" placeholder="起点">
+            </div>
+            
+              <div class="col-sm-offset-7 col-sm-5"><a href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>新增途经点</a></div>
+              
+ 
+            <div class="form-group">
+              <label for="line-end" class="control-label">终点:</label>
+              <input type="text" class="form-control" id="line-end" placeholder="终点">
+            </div>
+    
+            <div class="form-group">
+              <div class="col-sm-offset-9 col-sm-3">
+                <button type="submit" class="btn btn-primary">创建</button>
+              </div>
+            </div>
+          </form>
+          </div>
 
+
+        </div>
       </div>
 
-      <div class="line-main panel panel-info">
+      <div class="line-main panel panel-default">
         <div id="line-map" style="height:100%;"></div>
       </div>
     </div>

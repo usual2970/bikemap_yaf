@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-11 02:32:06
+<?php /* Smarty version 2.6.28, created on 2013-12-20 02:11:37
          compiled from index/footer.phtml */ ?>
     <div class="jt-footer">
       <div class="container">
@@ -15,11 +15,10 @@
     
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/bootstrap.min.js"></script>
-    <script src="<?php echo $this->_tpl_vars['url']; ?>
-/js/uploadify/jquery.uploadify.min.js"></script>
+    
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/index.js"></script>
-    <script type="text/javascript">
+    <script>
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
     document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4c42ddf892cc186c28070d3ae395e0d9' type='text/javascript'%3E%3C/script%3E"));
     </script>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-10 12:52:35
+<?php /* Smarty version 2.6.28, created on 2013-12-20 02:24:39
          compiled from index%5Clogreg.phtml */ ?>
 <!DOCTYPE html>
 <html>

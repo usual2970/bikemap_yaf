@@ -11,7 +11,8 @@ class Sns_Kra {
 	'qzone' => 'Tencent',
 	'renren' => 'Renren',
 	'qq'=>'Qq',
-	'sina'=>'Sina'
+	'sina'=>'Sina',
+	'baidu'=>'Baidu'
     );
 
     public function __construct($sns = "", $api_key = "", $api_secret = "", $addtions = array()) {
