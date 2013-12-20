@@ -101,6 +101,15 @@ class MaterialController extends Ctrl_Base{
         $this->assign("point",json_encode($point));
         $this->display("addline");
     }
+
+    //获得建议数据
+    public function sugplaceAction(){
+        $key=isset($_GET["kw"])?trim($_GET["kw"]):false;
+        if(!$key) $this->ajax("no param",1);
+        $conf=Yaf_Registry::get("config")->get("sns")->get("baidu")->toArray();
+        $sns=new Sns_Kra("baidu",$conf["ak"],$conf["sn"]);
+        $this->ajax("ok",0,$sns->get_suggest_place($key));
+    }
 }
 
 ?>

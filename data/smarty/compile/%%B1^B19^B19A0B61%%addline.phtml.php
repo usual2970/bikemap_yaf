@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-20 06:33:22
+<?php /* Smarty version 2.6.28, created on 2013-12-20 09:14:57
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -36,8 +36,8 @@
         <div style="padding:20px 0 0 100px;float:left;"><img src="<?php echo $this->_tpl_vars['url']; ?>
 /img/logo.png"></div>
         <div style="margin-left:350px;padding:30px 0 0 200px;">
-          <button class="btn btn-primary btn-lg">预览</button>
-          <button class="btn btn-primary btn-lg">保存路书</button>
+          <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-eye-open">预览</span></button>
+          <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign">保存路书</span></button>
         </div>
       </div>
       <div class="line-left panel panel-default">
@@ -51,15 +51,15 @@
             </div>
             <div class="form-group">
               <label for="line-start" class="control-label">起点:</label>
-              <input type="text" class="form-control" id="line-start" placeholder="起点">
+              <input type="text" class="form-control place-name" id="line-start" placeholder="起点">
             </div>
             
-              <div class="col-sm-offset-7 col-sm-5"><a href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>新增途经点</a></div>
+              <div class="col-sm-offset-7 col-sm-5"><a href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign add-bar"></span>新增途经点</a></div>
               
  
             <div class="form-group">
               <label for="line-end" class="control-label">终点:</label>
-              <input type="text" class="form-control" id="line-end" placeholder="终点">
+              <input type="text" class="form-control place-name" id="line-end" placeholder="终点">
             </div>
     
             <div class="form-group">

@@ -17,7 +17,6 @@ class Sns_Baidu extends Sns_Base{
     	return;
     }
 	protected function create_post_string($method, $params) {
-		$this->_rest_url.=$method;
 		return http_build_query($params);
     }
 
@@ -30,7 +29,7 @@ class Sns_Baidu extends Sns_Base{
 	}
 	return $result;
     }
-
+    //根据IP地址获取位置信息
     function get_location_by_ip($ip,$coor="bd09ll"){
     	$method="location/ip";
     	$params=array(
@@ -39,6 +38,20 @@ class Sns_Baidu extends Sns_Base{
     		"coor"=>$coor,
             "sn"=>$this->_api_secret
     	);
-    	return $this->post_request($method,$params,"get");
+    	return $this->post_request($method,$params,"get",$method);
     }
+    //根据关键字获得建议位置
+    function get_suggest_place($key){
+        $method="place/v2/suggestion";
+        $params=array(
+            "ak"=>$this->_api_key,
+            "query"=>$key,
+            "region"=>"全国",
+            "output"=>"json",
+            "sn"=>$this->_api_secret,
+            "timestamp"=>md5(time())
+        );
+        return $this->post_request($method,$params,"get",$method);
+    }
+
 }

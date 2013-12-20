@@ -36,7 +36,6 @@ class Sns_Base {
 	    $this->set_err(1002, "No seesion key found.");
 	    return false;
 	}
-
 	if ($upload)
 	    $post_string = $params;
 	else
