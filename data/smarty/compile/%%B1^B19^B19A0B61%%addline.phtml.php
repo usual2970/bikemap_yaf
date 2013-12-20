@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-20 09:14:57
+<?php /* Smarty version 2.6.28, created on 2013-12-20 09:38:44
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,7 @@
               <input type="text" class="form-control place-name" id="line-start" placeholder="起点">
             </div>
             
-              <div class="col-sm-offset-7 col-sm-5"><a href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign add-bar"></span>新增途经点</a></div>
+              <div class="col-sm-offset-7 col-sm-5" id="line-end-group"><a href="javascript:void(0);" class="add-bar"><span class="glyphicon glyphicon-plus-sign"></span>新增途经点</a></div>
               
  
             <div class="form-group">
