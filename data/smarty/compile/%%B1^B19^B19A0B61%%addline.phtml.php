@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-20 09:38:44
+<?php /* Smarty version 2.6.28, created on 2013-12-22 14:41:57
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -47,19 +47,21 @@
           <form class="form-horizontal" role="form">
             <div class="form-group">
               <label for="line-name" class="control-label">名称:<span class="text-muted">（如：清明湖州到杭州）</span></label>
-              <input type="email" class="form-control" id="line-name" placeholder="名称">
-            </div>
+              
+
+                <input type="email" class="form-control" id="line-name" placeholder="名称">            
+              </div>
             <div class="form-group">
               <label for="line-start" class="control-label">起点:</label>
               <input type="text" class="form-control place-name" id="line-start" placeholder="起点">
             </div>
             
-              <div class="col-sm-offset-7 col-sm-5" id="line-end-group"><a href="javascript:void(0);" class="add-bar"><span class="glyphicon glyphicon-plus-sign"></span>新增途经点</a></div>
+            <div class="form-group text-right" id="line-end-group"><a href="javascript:void(0);" class="add-bar"><span class="glyphicon glyphicon-plus-sign"></span>新增途经点</a></div>
               
  
             <div class="form-group">
               <label for="line-end" class="control-label">终点:</label>
-              <input type="text" class="form-control place-name" id="line-end" placeholder="终点">
+              <input type="text" class="place-name form-control" id="line-end" placeholder="终点">
             </div>
     
             <div class="form-group">
@@ -79,10 +81,23 @@
       </div>
     </div>
   
+    <script id="prompt-tpl" type="text/template">
+      <div id="auto-prompt" style="position:absolute;width:300px;background:#fff;z-index:100;top:65px;">
+        <button class="close" id="prompt-close" aria-hiden="true" style="position:absolute;top:5px;right:5px;">&times;</button>
+        <div class="panel panel-info" style="padding-top:10px;">
+          {@each result as place,index}
+          <p style="padding:0 10px;" data-attr="${place.name}"><small>${place.name}</small>-<span>${place.district}</span>-<b>${place.city}</b></p>
+          {@/each}
+        </div>
+      </div>
+      
 
+    </script>
     
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/bootstrap.min.js"></script>
+    <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/juicer.js"></script>
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/line.js" type="text/javascript"></script>
     <script>
