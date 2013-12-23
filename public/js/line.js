@@ -6,6 +6,7 @@ function loeamap(obj){
   this.polyline=null;
   this.start=null;
   this.end=null;
+  this.lushu=null;
   var that=this;
    $(document).off("click",this.ops.preview_bar).on("click",this.ops.preview_bar,function(){that.preview_line();});
    $(document).off("click",this.ops.submit_bar).on("click",this.ops.submit_bar,function(){that.submit_line();});
@@ -28,8 +29,11 @@ loeamap.prototype={
   preview_line:function(){
     var that=this;
     if(!!!this.polyline) return false;
-    var lushu = new BMapLib.LuShu(this.map,this.polyline.getPath(),{speed:10000,defaultContent:that.start+"至"+that.end});
-    lushu.start();
+    if(!!!that.lushu){
+      that.lushu = new BMapLib.LuShu(this.map,this.polyline.getPath(),{speed:10000,landmarkPois:[],defaultContent:that.start+"至"+that.end});
+    }
+    
+    that.lushu.start();
   },
   submit_line:function(){
     var that=this;
@@ -53,6 +57,7 @@ loeamap.prototype={
         that.polyline=rs[0].getPolyline();
       }
     });
+    if(that.start==data[0].name && that.end==data[1].name) return false;
     that.start=data[0].name;
     that.end=data[1].name
     transit.search(data[0].name,data[1].name);
