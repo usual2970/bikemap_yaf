@@ -110,6 +110,16 @@ class MaterialController extends Ctrl_Base{
         $sns=new Sns_Kra("baidu",$conf["ak"],$conf["sn"]);
         $this->ajax("ok",0,$sns->get_suggest_place($key));
     }
+
+    //获得规划路线
+    function getdirectAction(){
+        $data=isset($_GET["data"])?$_GET["data"]:false;
+        if(!$data) $this->ajax("no param",1);
+
+        $conf=Yaf_Registry::get("config")->get("sns")->get("baidu")->toArray();
+        $sns=new Sns_Kra("baidu",$conf["ak"],$conf["sn"]);
+        $this->ajax("ok",0,$sns->get_direct($data));
+    }
 }
 
 ?>

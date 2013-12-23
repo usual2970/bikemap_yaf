@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-22 14:41:57
+<?php /* Smarty version 2.6.28, created on 2013-12-23 07:33:26
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@
         <div style="padding:20px 0 0 100px;float:left;"><img src="<?php echo $this->_tpl_vars['url']; ?>
 /img/logo.png"></div>
         <div style="margin-left:350px;padding:30px 0 0 200px;">
-          <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-eye-open">预览</span></button>
+          <button class="btn btn-primary btn-lg" id="line-preview"><span class="glyphicon glyphicon-eye-open">预览</span></button>
           <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign">保存路书</span></button>
         </div>
       </div>
@@ -53,7 +53,7 @@
               </div>
             <div class="form-group">
               <label for="line-start" class="control-label">起点:</label>
-              <input type="text" class="form-control place-name" id="line-start" placeholder="起点">
+              <input type="text" class="form-control place-name" id="place-name" name="palce-name" placeholder="起点">
             </div>
             
             <div class="form-group text-right" id="line-end-group"><a href="javascript:void(0);" class="add-bar"><span class="glyphicon glyphicon-plus-sign"></span>新增途经点</a></div>
@@ -61,12 +61,12 @@
  
             <div class="form-group">
               <label for="line-end" class="control-label">终点:</label>
-              <input type="text" class="place-name form-control" id="line-end" placeholder="终点">
+              <input type="text" class="place-name form-control" id="place-name" name="palce-name" placeholder="终点">
             </div>
     
             <div class="form-group">
               <div class="col-sm-offset-9 col-sm-3">
-                <button type="submit" class="btn btn-primary">创建</button>
+                <button type="button" class="btn btn-primary" id="line-submit">创建</button>
               </div>
             </div>
           </form>
@@ -86,7 +86,7 @@
         <button class="close" id="prompt-close" aria-hiden="true" style="position:absolute;top:5px;right:5px;">&times;</button>
         <div class="panel panel-info" style="padding-top:10px;">
           {@each result as place,index}
-          <p style="padding:0 10px;" data-attr="${place.name}"><small>${place.name}</small>-<span>${place.district}</span>-<b>${place.city}</b></p>
+          <p style="padding:0 10px;" data-attr="${place.name}" data-city="${place.city}"><small>${place.name}</small>-<span>${place.district}</span>-<b>${place.city}</b></p>
           {@/each}
         </div>
       </div>
@@ -100,6 +100,7 @@
 /js/juicer.js"></script>
     <script src="<?php echo $this->_tpl_vars['url']; ?>
 /js/line.js" type="text/javascript"></script>
+    <script src="http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"></script>
     <script>
       
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
