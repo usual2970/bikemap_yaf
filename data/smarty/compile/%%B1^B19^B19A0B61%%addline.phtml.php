@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-23 07:33:26
+<?php /* Smarty version 2.6.28, created on 2013-12-24 06:08:30
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -37,12 +37,16 @@
 /img/logo.png"></div>
         <div style="margin-left:350px;padding:30px 0 0 200px;">
           <button class="btn btn-primary btn-lg" id="line-preview"><span class="glyphicon glyphicon-eye-open">预览</span></button>
-          <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign">保存路书</span></button>
+          <button class="btn btn-primary btn-lg" id="line-save"><span class="glyphicon glyphicon-ok-sign">保存路书</span></button>
         </div>
       </div>
       <div class="line-left panel panel-default">
         <div class="panel-heading"><span class="text-info"><span class="glyphicon glyphicon-pencil"></span>填写路书基本信息</span></div>
         <div class="panel-body">
+          <div class="panel panel-danger bg-danger" style="display:none;position:relative;">
+            <button class="close" id="error-close" aria-hiden="true" style="position:absolute;top:5px;right:5px;">&times;</button>
+            <div class="panel-body" id="line-error"></div>
+          </div>
           <div style="padding:0 15px;">
           <form class="form-horizontal" role="form">
             <div class="form-group">

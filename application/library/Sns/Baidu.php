@@ -54,14 +54,14 @@ class Sns_Baidu extends Sns_Base{
         return $this->post_request($method,$params,"get",$method);
     }
 
-    function get_direct($data){
+    function get_direct($data,$data1){
         $method="direction/v1";
         $params=array(
             "ak"=>$this->_api_key,
-            "origin"=>$data[0]["name"],
-            "origin_region"=>$data[0]["city"],
-            "destination"=>$data[1]["name"],
-            "destination_region"=>$data[1]["city"],
+            "origin"=>$data["name"],
+            "origin_region"=>$data["city"],
+            "destination"=>$data1["name"],
+            "destination_region"=>$data1["city"],
             "tactics"=>10,
             "output"=>"json",
             "coord_type"=>"bd09ll",

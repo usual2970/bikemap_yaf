@@ -7,8 +7,12 @@ function loeamap(obj){
   this.start=null;
   this.end=null;
   this.lushu=null;
+  this.error=[];
+  this.landmark=[];
   var that=this;
    $(document).off("click",this.ops.preview_bar).on("click",this.ops.preview_bar,function(){that.preview_line();});
+   $(document).off("click","#error-close").on("click","#error-close",function(){that.error_close();});
+   $(document).off("click","#line-save").on("click","#line-save",function(){that.save_line();});
    $(document).off("click",this.ops.submit_bar).on("click",this.ops.submit_bar,function(){that.submit_line();});
    $(document).off("keyup",this.ops.kw_uint).on("keyup",this.ops.kw_uint,function(e){that.get_suggest_place(this,e);});
    $(document).off("click",this.ops.addbar_uint).on("click",this.ops.addbar_uint,function(){that.add_pass();})
@@ -26,11 +30,54 @@ function loeamap(obj){
 
 
 loeamap.prototype={
+  show_error:function(){
+    var that=this;
+    var html="";
+    for(var i=0;i<this.error.length;i++){
+      html+="<p class='text-danger bg-danger'>"+this.error[i]+"</p>";
+    }
+    this.error=[];
+    $("#line-error").html(html).parent().show();
+    setTimeout(function(){that.error_close();},3000);
+  },
+  error_close:function(){
+    $("#line-error").parent().hide();
+  },
+  save_line:function(){
+    var line_name=$("input#line-name").val();
+    if(!!!line_name) this.error.push("路书标题不能为空");
+    var names=$("#line-pass input#place-name");
+    var data=[];
+    if(names.length!=0){
+      for(var i=0;i<names.length;i++){
+        if($(names[i]).val()==""){
+          this.error.push("途经地点不能为空");
+          continue;
+        }
+        var temp={};
+        temp.name=$(names[i]).val();
+        temp.city=$(names[i]).attr("data-city");
+        data.push(temp);
+      }
+    }
+
+    if(!!!this.polyline) this.error.push("请先创建路线");
+    if(this.error.length>0) {
+      this.show_error();
+      return false;
+    }
+    var path=this.polyline.getPath();
+
+    $.post(site_url+"/material/saveline",{name:line_name,pass:data,path:path},function(){
+
+    });
+    
+  },
   preview_line:function(){
     var that=this;
     if(!!!this.polyline) return false;
     if(!!!that.lushu){
-      that.lushu = new BMapLib.LuShu(this.map,this.polyline.getPath(),{speed:10000,landmarkPois:[],defaultContent:that.start+"至"+that.end});
+      that.lushu = new BMapLib.LuShu(this.map,this.polyline.getPath(),{speed:10000,landmarkPois:that.landmark,defaultContent:that.start+"至"+that.end});
     }
     
     that.lushu.start();
@@ -46,24 +93,38 @@ loeamap.prototype={
       temp.city=$(names[i]).attr("data-city");
       data.push(temp);
     }
-    var transit = new BMap.DrivingRoute(that.map, {
-      renderOptions: {
-        map: that.map,
-        panel: "r-result",
-        enableDragging : true //起终点可进行拖拽
-      },
-      DrivingPolicy:BMAP_DRIVING_POLICY_AVOID_HIGHWAYS,
-      onPolylinesSet:function(rs){
-        that.polyline=rs[0].getPolyline();
+    if(data.length==0) return false;
+    $.get(site_url+"/material/getdirect",{data:data},function(rs){
+      rs=eval("("+rs+")");
+      that.map.clearOverlays();
+      var points=[];
+      for(var i=0;i<rs.data.rs.length;i++){
+        points.push(new BMap.Point(rs.data.rs[i].lng,rs.data.rs[i].lat));
       }
+      that.landmark=rs.data.landmark;
+      that.polyline=new BMap.Polyline(points,{strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5});
+      that.map.addOverlay(that.polyline);
     });
-    if(that.start==data[0].name && that.end==data[1].name) return false;
     that.start=data[0].name;
-    that.end=data[1].name
-    transit.search(data[0].name,data[1].name);
+    that.end=data[data.length-1].name
+    
 
   },
   add_pass:function(){
+    var names=$("#line-pass input#place-name");
+
+    if(names.length!=0){
+      for(var i=0;i<names.length;i++){
+        if($(names[i]).val()==""){
+          this.error.push("有未填的途经地点，不能新添");
+          break;
+        }
+      }
+    }
+    if(this.error.length>0){
+      this.show_error();
+      return false;
+    }
     this.pass_num+=1;
     var html="<div class='form-group' id='line-pass'>"
               +"<label for='line-end' class='control-label'>途经点"+this.pass_num+":</label>"

@@ -102,6 +102,11 @@ class MaterialController extends Ctrl_Base{
         $this->display("addline");
     }
 
+    //保存路线
+    public function savelineAction(){
+        
+    }
+
     //获得建议数据
     public function sugplaceAction(){
         $key=isset($_GET["kw"])?trim($_GET["kw"]):false;
@@ -118,7 +123,22 @@ class MaterialController extends Ctrl_Base{
 
         $conf=Yaf_Registry::get("config")->get("sns")->get("baidu")->toArray();
         $sns=new Sns_Kra("baidu",$conf["ak"],$conf["sn"]);
-        $this->ajax("ok",0,$sns->get_direct($data));
+        $rs=array();
+        $landmark=array();
+        for($i=0;$i<count($data)-1;$i++){
+            $temp=$sns->get_direct($data[$i],$data[$i+1]);
+            foreach($temp["result"]["routes"][0]["steps"] as $k=>$v){
+                $point=explode(",", $v["path"]);
+                $rs[]=array("lng"=>$point[0],"lat"=>$point[1]);
+                if($v["pois"][0]["name"]){
+                    $landmark[]=array("lng"=>$point[0],"lat"=>$point[1],"html"=>$v["pois"][0]["name"],"pauseTime"=>1);
+                }
+            }
+        }
+        
+        
+
+        $this->ajax("ok",0,array("rs"=>$rs,"landmark"=>$landmark));
     }
 }
 
