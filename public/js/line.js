@@ -44,14 +44,16 @@ loeamap.prototype={
     $("#line-error").parent().hide();
   },
   save_line:function(){
+    var url=site_url+"/material/saveline";
+    if(typeof(line)!="undefined") url=site_url+"/material/saveline/id/"+line.id;
     var line_name=$("input#line-name").val();
     if(!!!line_name) this.error.push("路书标题不能为空");
-    var names=$("#line-pass input#place-name");
+    var names=$("input#place-name");
     var data=[];
     if(names.length!=0){
       for(var i=0;i<names.length;i++){
         if($(names[i]).val()==""){
-          this.error.push("途经地点不能为空");
+          this.error.push("起终点及途经地点不能为空");
           continue;
         }
         var temp={};
@@ -67,8 +69,7 @@ loeamap.prototype={
       return false;
     }
     var path=this.polyline.getPath();
-
-    $.post(site_url+"/material/saveline",{name:line_name,pass:data,path:path},function(){
+    $.post(url,{name:line_name,pass:data,path:path,landmark:this.landmark},function(){
 
     });
     
@@ -107,8 +108,20 @@ loeamap.prototype={
     });
     that.start=data[0].name;
     that.end=data[data.length-1].name
-    
-
+  },
+  edit_line:function(line){
+    var that=this;
+    this.map.clearOverlays();
+    var points=[];
+    for(var i=0;i<line.path.length;i++){
+      points.push(new BMap.Point(line.path[i].lng,line.path[i].lat));
+    }
+    that.start=line.pass[0].name;
+    var num=line.pass.length-1;
+    that.end=line.pass[num].name;
+    that.landmark=line.landmark;
+    that.polyline=new BMap.Polyline(points,{strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5});
+    that.map.addOverlay(that.polyline);
   },
   add_pass:function(){
     var names=$("#line-pass input#place-name");
@@ -210,6 +223,9 @@ $(document).ready(function(){
     submit_bar:"#line-submit",
     preview_bar:"#line-preview"
   });
+  if(typeof(line)!="undefined"){
+    map_obj.edit_line(line);
+  }
 
   
 

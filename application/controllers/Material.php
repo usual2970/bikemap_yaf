@@ -83,6 +83,25 @@ class MaterialController extends Ctrl_Base{
 
     //路线列表
     public function mapAction(){
+        $page=intval($this->getQuery("page"));
+        if(!$page) $page=1;
+        $page_rows=10;
+        $start=($page-1)*$page_rows;
+        
+        $map_obj=new MapModel();
+
+
+        $user_id=$_SESSION["id"];
+
+        $rows=$map_obj->where("user_id={$user_id}")->count();
+        $page=new Page_Base($rows,$page_rows);
+        $page_str=$page->str();
+
+        $this->assign("page_str",$page_str);
+
+        $map=$map_obj->where("user_id={$user_id}")->order("id desc")->limit("{$start},{$page_rows}")->fList();
+
+        $this->assign("map",$map);
         $this->display("map");
     }
     //新增路线
@@ -104,7 +123,60 @@ class MaterialController extends Ctrl_Base{
 
     //保存路线
     public function savelineAction(){
+        extract($_POST);
+        $id=$this->getParam("id");
+        if(!$name) $this->ajax("路书名称不能为空",1);
+        if(!$pass) $this->ajax("起终点及途经地点不能为空",2);
+        if(!$path) $this->ajax("请先创建路书",3);
+
+        $data=array(
+            "user_id"=>$_SESSION["id"],
+            "add_time"=>time(),
+            "pass"=>serialize($pass),
+            "path"=>serialize($path),
+            "name"=>$name,
+            "landmark"=>serialize($landmark)
+        );
+        $map_obj=new MapModel();
+        if(!$id){
+            $map_obj->save($data);
+        }
+        else{
+            $map_obj->where("id={$id}")->update($data);
+        }
         
+        
+        $this->ajax("ok",0);
+    }
+
+    public function editlineAction(){
+        $id=$this->getParam("id");
+        $map_obj=new MapModel();
+        $line=$map_obj->where("id={$id}")->fRow();
+        $line["pass"]=unserialize($line["pass"]);
+        $line["path"]=unserialize($line["path"]);
+        $line["landmark"]=unserialize($line["landmark"]);
+        $ip=Funs_Base::real_ip();
+        $conf=Yaf_Registry::get("config")->get("sns")->get("baidu")->toArray();
+        $sns=new Sns_Kra("baidu",$conf["ak"],$conf["sn"]);
+        $location=$sns->get_location_by_ip($ip);
+        $point=array();
+        if($location["status"]!=0){
+            $point=array("x"=>"120.21937542","y"=>"30.25924446");
+        }
+        else{
+            $point=$location["content"]["point"];
+        }
+        $this->assign("point",json_encode($point));
+        $this->assign("jsline",json_encode($line));
+        $this->assign("line",$line);
+        $this->display("editline");
+    }
+
+    public function dellineAction(){
+        $id=$this->getParam("id");
+        $img_obj=new MapModel();
+        echo $img_obj->where("id={$id}")->del();
     }
 
     //获得建议数据

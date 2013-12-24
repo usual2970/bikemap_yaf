@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-20 02:11:37
+<?php /* Smarty version 2.6.28, created on 2013-12-24 07:55:38
          compiled from index/footer.phtml */ ?>
     <div class="jt-footer">
       <div class="container">

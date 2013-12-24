@@ -12,9 +12,30 @@
       </ul>
       <div id="myTabContent" class="tab-content" style="padding:10px;height:100%;">
         <div class="tab-pane fade active in" id="home" style="position:relative">
+          <div style="position:absolute;right:20px;top:0px;">`$page_str~</div>
           <div style="height:500px;" id="line-map">
             <p><button class="btn btn-default" id="line-add"><span class="glyphicon glyphicon-plus"></span>新增路线</button></p>
-            <hr/>
+          
+            <table class="table" id="pictures">
+              `foreach from=$map item=line~
+              <tr>
+                <td width="50%">
+                  <h4>`$line.name~</h4>
+                  
+                </td>
+
+                <td width="25%">
+                  <h4><em class="text-muted">`$line.add_time|date_format:'%Y-%m-%d %H:%M'~</em></h4>
+                </td>
+                <td>
+                  <h4 class="text-center" id="pic-op" style="display:none;">
+                    <a href="/material/editline/id/`$line.id~" class="text-muted" target="_blank" title="编辑查看路书"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;
+                    <a href="javascript:void(0);" class="text-muted" id="delline" data-id="`$line.id~" title="删除路书"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
+                  </h4>
+                </td>
+              </tr>
+              `/foreach~
+            </table>
           </div>
 
         </div>
