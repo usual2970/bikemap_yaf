@@ -17,4 +17,11 @@ $(document).ready(function(){
       }
 
     );
+
+    $(document).off("click","#delline").on("click","#delline",function(){
+    	var id=$(this).attr("data-id");
+    	$.get(site_url+"/material/delline/id/"+id,function(rs){
+    		window.location.reload();
+    	});
+    });
 });

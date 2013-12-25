@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-24 09:13:50
+<?php /* Smarty version 2.6.28, created on 2013-12-25 02:28:19
          compiled from material%5Caddline.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <title>囧途网—囧途中的囧图集,囧文集,旅途百科,驴友集散地</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/fav.jpg"> 
+    <link rel="shortcut icon" href="<?php echo $this->_tpl_vars['url']; ?>
+/img/fav.jpg"> 
     <link href="<?php echo $this->_tpl_vars['url']; ?>
 /css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="<?php echo $this->_tpl_vars['url']; ?>

@@ -139,14 +139,14 @@ class MaterialController extends Ctrl_Base{
         );
         $map_obj=new MapModel();
         if(!$id){
-            $map_obj->save($data);
+            $rs=$map_obj->save($data);
         }
         else{
-            $map_obj->where("id={$id}")->update($data);
+            $rs=$map_obj->where("id={$id}")->update($data);
         }
         
         
-        $this->ajax("ok",0);
+        $this->ajax("ok",0,$rs);
     }
 
     public function editlineAction(){

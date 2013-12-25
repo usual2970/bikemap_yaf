@@ -69,7 +69,19 @@ loeamap.prototype={
       return false;
     }
     var path=this.polyline.getPath();
-    $.post(url,{name:line_name,pass:data,path:path,landmark:this.landmark},function(){
+    $.post(url,{name:line_name,pass:data,path:path,landmark:this.landmark},function(rs){
+      rs=eval("("+rs+")");
+      if(rs.status==0){
+        if(typeof(line)=="undefined"){
+          window.line={};
+          line.id=rs.data;
+        }
+        alert("保存成功");
+      }
+      else{
+        alert(rs.msg);
+      }
+      
 
     });
     
@@ -104,6 +116,7 @@ loeamap.prototype={
       }
       that.landmark=rs.data.landmark;
       that.polyline=new BMap.Polyline(points,{strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5});
+      that.map.centerAndZoom(that.polyline.getBounds().getCenter(),11);
       that.map.addOverlay(that.polyline);
     });
     that.start=data[0].name;
@@ -121,6 +134,7 @@ loeamap.prototype={
     that.end=line.pass[num].name;
     that.landmark=line.landmark;
     that.polyline=new BMap.Polyline(points,{strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5});
+    that.map.centerAndZoom(that.polyline.getBounds().getCenter(),11);
     that.map.addOverlay(that.polyline);
   },
   add_pass:function(){
