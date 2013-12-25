@@ -1,0 +1,28 @@
+`include file=index/header.phtml~
+<div class="container" style="margin-top:30px;">
+	<div class="row">
+		`include file=index/ucmenu.phtml~
+		<div class="col-md-9 jt-uc-container">
+
+
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="`$url~/travel" >游记管理</a></li>
+        
+      </ul>
+      <div id="myTabContent" class="tab-content" style="padding:10px;height:100%;">
+        <div class="tab-pane fade active in" id="home" style="position:relative">
+          <div style="position:absolute;right:20px;top:0px;">`$page_str~</div>
+          <div style="height:500px;" id="line-map">
+            <p><a class="btn btn-default" id="line-add" target="_self" href="`$url~/travel/add"><span class="glyphicon glyphicon-plus"></span>新增路线</a></p>
+          </div>
+
+        </div>
+        
+      </div>
+    
+
+		</div>
+	</div>
+
+</div>
+`include file=index/footer.phtml~
