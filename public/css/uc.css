@@ -484,9 +484,9 @@ body {
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #563d7c;
+  color: #0666c5;
   background-color: transparent;
-  border-right: 1px solid #563d7c;
+  border-right: 1px solid #0666c5;
 }
 
 /* Nav: second level (shown on .active) */

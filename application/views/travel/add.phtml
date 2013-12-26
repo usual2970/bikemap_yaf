@@ -2,6 +2,7 @@
 <script type="text/javascript" charset="utf-8" src="`$url~/js/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="`$url~/js/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" charset="utf-8" src="$url~/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+
 <div class="container" style="margin-top:30px;">
 	<div class="row">
 		`include file=index/ucmenu.phtml~
@@ -14,11 +15,45 @@
       </ul>
       <div id="myTabContent" class="tab-content" style="padding:10px;height:100%;">
         <div class="tab-pane fade active in" id="home" style="position:relative">
-          <div style="position:absolute;right:20px;top:0px;">`$page_str~</div>
-          <div style="height:500px;" id="line-map">
-            <p>
-              <script id="travel-editor" type="text/plain" style="width:100%;height:500px;"></script>
-            </p>
+          <div class="alert alert-warning fade in" style="display:none;" id="travel-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <span id="travel-error"></span>
+          </div>
+          <div id="line-map">
+            <form id="travel-form" method="post">
+              <div class="form-group">
+                <label for="title">标题</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="标题">
+              </div>
+              `if $maps~
+              <div class="form-group">
+                <label for="map_id">路书<small class="text-muted">(选填)</small></label>
+                <select class="form-control" name="map_id" id="map_id">
+                  `foreach from=$maps item=map~
+                    <option value="`$map.id~">`$map.name~</option>
+                  `/foreach~
+                </select>
+              </div>
+              `/if~
+              <div class="form-group">
+                <label for="tags">标签<small class="text-muted">(选填)</small></label>
+                <input type="text" class="form-control" name="tags" id="tags" placeholder="标签">
+              </div>
+              <div class="form-group">
+                 <label><a id="travel-add-desc" href="javascript:void(0);">添加摘要</a></label>
+                 <label for="desc" style="display:none">摘要<small class="text-muted">(选填)</small></label>
+                <textarea class="form-control" name="desc" id="desc" placeholder="摘要" rows="4" style="display:none"></textarea>
+              </div>
+            <div class="form-group">
+              <label for="content">正文</label>
+              <textarea id="content" name="content" style="width:100%;height:400px;"></textarea>
+            </div>
+
+            <div class="form-group">
+              
+              <button type="button" class="btn btn-success col-xs-2 col-md-offset-3" id="travel-preview">预览</button><button type="submit" class="btn btn-success col-xs-2 col-md-offset-1" id="travel-save">保存</button>
+            </div>
+          </form>
           </div>
 
         </div>
@@ -31,6 +66,9 @@
 
 </div>
 <script>
-UE.getEditor('travel-editor');
+UE.getEditor('content');
 </script>
+
+<script src="`$url~/js/validator/dist/jquery.validate.min.js"></script>
+<script src="`$url~/js/travel.js"></script>
 `include file=index/footer.phtml~

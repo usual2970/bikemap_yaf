@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-25 06:23:50
+<?php /* Smarty version 2.6.28, created on 2013-12-26 03:11:22
          compiled from index/ucmenu.phtml */ ?>
 <div class="col-md-3">
 	<div class="bs-sidebar hidden-print affix" role="complementary">
@@ -7,11 +7,11 @@
 			<li class="active">
 				<a href="#download">管理</a>
 				<ul class="nav">
-					<li class="">
+					<li class="" data-con="Material">
 						<a href="<?php echo $this->_tpl_vars['url']; ?>
 /material">素材管理</a>
 					</li>
-					<li class="">
+					<li class="" data-con="Travel">
 						<a href="<?php echo $this->_tpl_vars['url']; ?>
 /travel">游记管理</a>
 					</li>

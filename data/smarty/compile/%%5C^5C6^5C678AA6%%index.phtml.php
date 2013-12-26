@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-25 06:27:46
+<?php /* Smarty version 2.6.28, created on 2013-12-26 01:29:20
          compiled from travel%5Cindex.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -26,7 +26,7 @@ unset($_smarty_tpl_vars);
 </div>
           <div style="height:500px;" id="line-map">
             <p><a class="btn btn-default" id="line-add" target="_self" href="<?php echo $this->_tpl_vars['url']; ?>
-/travel/add"><span class="glyphicon glyphicon-plus"></span>新增路线</a></p>
+/travel/add"><span class="glyphicon glyphicon-plus"></span>新增游记</a></p>
           </div>
 
         </div>

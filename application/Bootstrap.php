@@ -10,7 +10,7 @@
 class Bootstrap extends Yaf_Bootstrap_Abstract{
 
     public function _initConfig() {
-    	error_reporting(0);
+    	//error_reporting(0);
 		//把配置保存起来
 		$arrConfig = Yaf_Application::app()->getConfig();
 		Yaf_Registry::set('config', $arrConfig);
@@ -31,7 +31,8 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 	}
 
 	public function _initSmarty(Yaf_Dispatcher $dispatcher){
-		$view= new Smarty_Adapter(null, Yaf_Registry::get("config")->get("smarty"));
+		$conf=Yaf_Registry::get("config")->get("smarty")->toArray();
+		$view= new Smarty_Adapter(null, $conf);
 	    Yaf_Dispatcher::getInstance()->setView($view);
 	    Yaf_Dispatcher::getInstance()->disableView();
 	}

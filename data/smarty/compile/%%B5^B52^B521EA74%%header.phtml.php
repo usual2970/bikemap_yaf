@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-24 07:55:38
+<?php /* Smarty version 2.6.28, created on 2013-12-26 03:11:22
          compiled from index/header.phtml */ ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +20,8 @@
 /js/jquery.js"></script>
     <script>
       var site_url="<?php echo $this->_tpl_vars['url']; ?>
+";
+      var controller="<?php echo $_SESSION['controller']; ?>
 ";
     </script>
     <!--[if lt IE 9]>
