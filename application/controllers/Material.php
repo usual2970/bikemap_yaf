@@ -1,4 +1,4 @@
-<?php
+z<?php
 class MaterialController extends Ctrl_Base{
     //图片列表
 	public function indexAction(){
@@ -24,86 +24,6 @@ class MaterialController extends Ctrl_Base{
 		$this->assign("jt",Yaf_Registry::get('session_id'));
 		$this->display("index");
 	}
-
-    public function getimgsAction(){
-        $user_id=$_SESSION["id"];
-        $img_obj=new ImgModel();
-        $rows=$img_obj->where("user_id={$user_id}")->fList();
-        $str="";
-        foreach($rows as $k=>$v){
-            $str.=$v["img_sml"]."ue_separate_ue";
-        }
-        echo $str;
-    }
-
-    //编辑器上传图片
-    public function upimg4ediAction(){
-        $site_url="http://www.joneto.com";
-        //上传图片框中的描述表单名称，
-        $title = htmlspecialchars($_POST['pictitle'], ENT_QUOTES);
-        $path = htmlspecialchars($_POST['dir'], ENT_QUOTES);
-        $globalConfig = include( "config.php" );
-        $imgSavePathConfig = array(APPLICATION_PATH."/public/img/material");
-
-        //获取存储目录
-        if ( isset( $_GET[ 'fetch' ] ) ) {
-
-            header( 'Content-Type: text/javascript' );
-            echo 'updateSavePath('. json_encode($imgSavePathConfig) .');';
-            return;
-
-        }
-
-        //上传配置
-        $config = array(
-            "savePath" => $imgSavePathConfig,
-            "maxSize" => 1000, //单位KB
-            "allowFiles" => array(".gif", ".png", ".jpg", ".jpeg", ".bmp"),
-            "fileNameFormat" => $_POST['fileNameFormat']
-        );
-
-        if ( empty( $path ) ) {
-
-            $path = $config[ 'savePath' ][ 0 ];
-
-        }
-
-        //上传目录验证
-        if ( !in_array( $path, $config[ 'savePath' ] ) ) {
-            //非法上传目录
-            echo '{"state":"\u975e\u6cd5\u4e0a\u4f20\u76ee\u5f55"}';
-            return;
-        }
-
-        $config[ 'savePath' ] = $path . '/';
-
-        //生成上传实例对象并完成上传
-        $up = new Img_Upload("upfile", $config);
-
-        /**
-         * 得到上传文件所对应的各个参数,数组结构
-         * array(
-         *     "originalName" => "",   //原始文件名
-         *     "name" => "",           //新文件名
-         *     "url" => "",            //返回的地址
-         *     "size" => "",           //文件大小
-         *     "type" => "" ,          //文件类型
-         *     "state" => ""           //上传状态，上传成功时必须返回"SUCCESS"
-         * )
-         */
-        $info = $up->getFileInfo();
-
-        /**
-         * 向浏览器返回数据json数据
-         * {
-         *   'url'      :'a.jpg',   //保存后的文件路径
-         *   'title'    :'hello',   //文件描述，对图片来说在前端会添加到title属性上
-         *   'original' :'b.jpg',   //原始文件名
-         *   'state'    :'SUCCESS'  //上传状态，成功时返回SUCCESS,其他任何值将原样返回至图片上传框中
-         * }
-         */
-        echo "{'url':'" . $info["url"] . "','title':'" . $title . "','original':'" . $info["originalName"] . "','state':'" . $info["state"] . "'}";
-    }
     //上传图片
 	public function uploadAction(){
 
@@ -113,7 +33,7 @@ class MaterialController extends Ctrl_Base{
 
         $conf=Yaf_Registry::get("config")->get("site")->toArray();
 
-        $targetUrl=$conf["url"]."/img/material/".date("Ymd"). '/' . $_FILES['Filedata']['name'];
+        $targetUrl=$conf["url"]."/img/material/".date("Ymd"). '/' . $_FILES['Filedata']['name'];;
 
         if(!is_dir($targetPath)) mkdir($targetPath);
 
@@ -219,14 +139,14 @@ class MaterialController extends Ctrl_Base{
         );
         $map_obj=new MapModel();
         if(!$id){
-            $rs=$map_obj->save($data);
+            $map_obj->save($data);
         }
         else{
-            $rs=$map_obj->where("id={$id}")->update($data);
+            $map_obj->where("id={$id}")->update($data);
         }
         
         
-        $this->ajax("ok",0,$rs);
+        $this->ajax("ok",0);
     }
 
     public function editlineAction(){

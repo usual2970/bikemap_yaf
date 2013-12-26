@@ -14,6 +14,43 @@
           <div style="position:absolute;right:20px;top:0px;">`$page_str~</div>
           <div style="height:500px;" id="line-map">
             <p><a class="btn btn-default" id="line-add" target="_self" href="`$url~/travel/add"><span class="glyphicon glyphicon-plus"></span>新增游记</a></p>
+            <p>
+            <table class="table" id="pictures">
+               <tr>
+                <th width="30%">
+                  标题
+                </th>
+                 <th width="20%">
+                  路书
+                </th>
+                <th width="25%">
+                  创建时间
+                </th>
+                <th>
+                  操作
+                </th>
+              </tr>
+              `foreach from=$arts item=art~
+              <tr>
+                <td width="30%">
+                  <p><a href="`$img.img_big~" target="_blank">`$art.title~</a></p>
+                </td>
+                <td width="20%">
+                  <p><a href="`$url~/material/editline/id/`$art.line_id~" target="_blank">`$art.name~</a></p>
+                </td>
+                <td width="25%">
+                  `$art.add_time|date_format:'%Y-%m-%d %H:%M'~
+                </td>
+                <td>
+                  <h4 class="text-center" id="pic-op" style="display:none;">
+                    <a href="/material/saveimg/id/`$img.id~" class="text-muted" target="_blank"><span class="glyphicon glyphicon-save"></span></a>&nbsp;&nbsp;
+                    <a href="javascript:void(0);" class="text-muted" id="delimg" data-id="`$img.id~"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
+                  </h4>
+                </td>
+              </tr>
+              `/foreach~
+            </table>
+          </p>
           </div>
 
         </div>

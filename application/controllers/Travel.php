@@ -1,6 +1,30 @@
 <?php
 class TravelController extends Ctrl_Base {
 	public function indexAction() {
+		$page=intval($this->getQuery("page"));
+		if(!$page) $page=1;
+		$page_rows=10;
+		$start=($page-1)*$page_rows;
+		$art_obj=new ArticleModel();
+
+		$user_id=$_SESSION["id"];
+
+		$rows=$art_obj->where("user_id={$user_id}")->count();
+		$page=new Page_Base($rows,$page_rows);
+		$page_str=$page->str();
+
+		$this->assign("page_str",$page_str);
+
+		$arts=$art_obj
+				->field("jt_article.id,jt_article.title,jt_article.user_id,jt_article.add_time,jt_article.tags,jt_map.name,jt_map.id as line_id")
+				->join("jt_map", "jt_map.id=jt_article.map_id", "left")
+				->where("jt_article.user_id={$user_id}")
+				->order("id desc")
+				->limit("{$start},{$page_rows}")
+				->fList();
+
+		$this->assign("arts",$arts);
+
         $this->display("index");
 	}
 
