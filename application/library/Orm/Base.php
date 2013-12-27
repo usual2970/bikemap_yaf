@@ -198,7 +198,7 @@ class Orm_Base{
 		if($this->_filter($pData)){
 			$tField = join(',', array_keys($pData));
 			$tVal = join("','", $pData);
-			echo $tSql = ($pReplace? "REPLACE": "INSERT") . " INTO $this->table($tField) VALUES ('$tVal')";
+			$tSql = ($pReplace? "REPLACE": "INSERT") . " INTO $this->table($tField) VALUES ('$tVal')";
 			if($this->exec($tSql)){
 				return $this->db->lastInsertId();
 			}
