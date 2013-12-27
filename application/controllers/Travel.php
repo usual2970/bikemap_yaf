@@ -44,7 +44,7 @@ class TravelController extends Ctrl_Base {
 				$imgs=implode(",", $matches[1]);
 			}
 
-			$content=preg_replace("/<script.+?\/script>", "", $content);
+			$content=preg_replace("/<script.+?\/script>/", "", $content);
 
 			$data=array(
 				"title"=>$title,
@@ -74,5 +74,72 @@ class TravelController extends Ctrl_Base {
         $map=$map_obj->where("user_id={$user_id}")->order("id desc")->fList();
         $this->assign("maps",$map);
 		$this->display("add");
+	}
+
+	public function editAction(){
+		$id=$this->getParam("id");
+		$user_id=$_SESSION["id"];
+		if(!$id) exit("参数有误");
+		if($this->getRequest()->method=="POST"){
+			extract($_POST);
+			if(!$title ||!$content){
+				exit("标题或内容为空");
+			}
+			if(!$desc){
+				$pure_text=preg_replace("/\<.+?\>/i","", $content);
+				$desc=substr($pure_text, 0,360);
+			}
+			preg_match_all("/\<img.*?src=\"(.*?)\".*?\>/i", $content, $matches);
+			if($matches){
+				$imgs=implode(",", $matches[1]);
+			}
+
+			$content=preg_replace("/<script.+?\/script>/", "", $content);
+
+			$data=array(
+				"title"=>$title,
+				"map_id"=>$map_id,
+				"content"=>mysql_real_escape_string($content),
+				"tags"=>$tags,
+				"`desc`"=>$desc,
+				"imgs"=>$imgs,
+				"edit_time"=>time(),
+				"`status`"=>0,
+				"user_id"=>$_SESSION["id"]
+			);
+			$art_obj=new ArticleModel();
+			$rs=$art_obj->where("id={$id} and user_id={$user_id}")->update($data);
+			if($rs){
+				$this->redirect("/travel");
+				exit();
+			}
+			else{
+				exit("保存失败");
+			}
+		}
+		
+		$art_obj=new ArticleModel();
+		
+		$rs=$art_obj->where("user_id={$user_id} and id={$id}")->fRow();
+		if(!$rs) exit("游记不存在");
+		$this->assign("art",$rs);
+
+
+		$map_obj=new MapModel();
+
+		$map_obj=new MapModel();
+        $map=$map_obj->where("user_id={$user_id}")->order("id desc")->fList();
+        $this->assign("maps",$map);
+		$this->display("edit");
+	}
+
+	public function deleteAction(){
+		$id=$this->getParam("id");
+		$user_id=$_SESSION["id"];
+		if(!$id) exit("参数有误");
+		$art_obj=new ArticleModel();
+
+		echo $art_obj->where("id={$id} and user_id={$user_id}")->del();
+
 	}
 }

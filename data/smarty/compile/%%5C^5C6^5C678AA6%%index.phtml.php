@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-26 13:12:42
+<?php /* Smarty version 2.6.28, created on 2013-12-27 02:10:07
          compiled from travel%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'date_format', 'travel\\index.phtml', 42, false),)), $this); ?>
@@ -32,13 +32,13 @@ unset($_smarty_tpl_vars);
             <p>
             <table class="table" id="pictures">
                <tr>
-                <th width="30%">
+                <th width="40%">
                   标题
                 </th>
                  <th width="20%">
                   路书
                 </th>
-                <th width="25%">
+                <th width="20%">
                   创建时间
                 </th>
                 <th>
@@ -49,7 +49,7 @@ unset($_smarty_tpl_vars);
     foreach ($_from as $this->_tpl_vars['art']):
 ?>
               <tr>
-                <td width="30%">
+                <td width="40%">
                   <p><a href="<?php echo $this->_tpl_vars['img']['img_big']; ?>
 " target="_blank"><?php echo $this->_tpl_vars['art']['title']; ?>
 </a></p>
@@ -60,17 +60,18 @@ unset($_smarty_tpl_vars);
 " target="_blank"><?php echo $this->_tpl_vars['art']['name']; ?>
 </a></p>
                 </td>
-                <td width="25%">
+                <td width="20%">
                   <?php echo ((is_array($_tmp=$this->_tpl_vars['art']['add_time'])) ? $this->_run_mod_handler('date_format', true, $_tmp, '%Y-%m-%d %H:%M') : smarty_modifier_date_format($_tmp, '%Y-%m-%d %H:%M')); ?>
 
                 </td>
                 <td>
-                  <h4 class="text-center" id="pic-op" style="display:none;">
-                    <a href="/material/saveimg/id/<?php echo $this->_tpl_vars['img']['id']; ?>
-" class="text-muted" target="_blank"><span class="glyphicon glyphicon-save"></span></a>&nbsp;&nbsp;
-                    <a href="javascript:void(0);" class="text-muted" id="delimg" data-id="<?php echo $this->_tpl_vars['img']['id']; ?>
-"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
-                  </h4>
+                    <a href="<?php echo $this->_tpl_vars['url']; ?>
+/travel/edit/id/<?php echo $this->_tpl_vars['art']['id']; ?>
+" class="text-muted" data-id="<?php echo $this->_tpl_vars['art']['id']; ?>
+" target="_blank"><span class="glyphicon glyphicon-edit"></span>编辑</a>&nbsp;&nbsp;
+                    <a href="javascript:void(0);" class="text-muted" id="delart" data-id="<?php echo $this->_tpl_vars['art']['id']; ?>
+"><span class="glyphicon glyphicon-trash"></span>删除</a>&nbsp;&nbsp;
+                  
                 </td>
               </tr>
               <?php endforeach; endif; unset($_from); ?>
@@ -87,6 +88,17 @@ unset($_smarty_tpl_vars);
 	</div>
 
 </div>
+<script>
+$(document).ready(function(){
+  $("#delart").click(function(){
+    var id=$(this).attr("data-id");
+    if(!confirm("确定要删除游记么？")) return false;
+    $.get(site_url+"/travel/delete/id/"+id,function(rs){
+      //window.location.reload();
+    });
+  });
+});
+</script>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/footer.phtml", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

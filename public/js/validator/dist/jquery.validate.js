@@ -475,6 +475,7 @@ $.extend($.validator, {
 			return $(this.currentForm)
 			.find("input, select, textarea")
 			.not(":submit, :reset, :image, [disabled]")
+			.not( this.settings.ignore )
 			.filter(function() {
 				if ( !this.name && validator.settings.debug && window.console ) {
 					console.error( "%o has no name assigned", this);
