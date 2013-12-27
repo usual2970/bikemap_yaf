@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-27 07:55:06
+<?php /* Smarty version 2.6.28, created on 2013-12-27 12:12:24
          compiled from index%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 116, false),)), $this); ?>
@@ -8,7 +8,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
     <!--内容-->
-    <div class="container" style="margin-top:70px;">
+    <div class="container" style="margin-top:40px;">
       <div class="row">
         <div class="col-md-8">
 
@@ -183,6 +183,17 @@ unset($_smarty_tpl_vars);
             <div class="jt-ml-10">
               
               <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;出行都是为了获得一段美好的体验，带上一副好心情traveling light,既然是traveling light,就一定要轻，带上足够的银子，几件换洗的衣服，就果断出发吧，千万别上山背石头哦。。。</p>
+            </div>
+            
+          </div>
+
+          <hr>
+          <p class="jt-pl-10"><b>赞助商</b></p>
+
+          <div class="clearfix">
+            <div class="jt-ml-10">
+              
+              <p class="text-muted"><a href="http://s.click.taobao.com/t?e=m%3D2%26s%3DEOjMP%2FZdglccQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAhaeD7ZFp2KhmCBgKg63Ff9YU0kl1dGVYgbAqy1VXNRYqgOH9%2Fz8vrH6G2ObSgSB3%2Bdn1BbglxZYxUhy8exlzcq9AmARIwX9K%2BnbtOD3UdznPV1H2z0iQv%2FtmSjxrhnChg%3D%3D" target="_blank"><img src="http://gtms01.alicdn.com/tps/i1/T1vEJoFrFbXXcg0_ET-336-280.jpg" /></a></iframe></p>
             </div>
             
           </div>
