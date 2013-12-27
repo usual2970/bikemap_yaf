@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-27 01:56:20
+<?php /* Smarty version 2.6.28, created on 2013-12-27 02:48:04
          compiled from travel%5Cedit.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -61,8 +61,8 @@ unset($_smarty_tpl_vars);
               </div>
               <div class="form-group">
                  <label><a id="travel-add-desc" href="javascript:void(0);">添加摘要</a></label>
-                 <label for="desc" style="display:none">摘要<small class="text-muted">(选填)</small></label>
-                <textarea class="form-control" name="desc" id="desc" placeholder="摘要" rows="4" style="display:none"><?php echo $this->_tpl_vars['art']['desc']; ?>
+                 <label for="descript" style="display:none">摘要<small class="text-muted">(选填)</small></label>
+                <textarea class="form-control" name="descript" id="descript" placeholder="摘要" rows="4" style="display:none"><?php echo $this->_tpl_vars['art']['descript']; ?>
 </textarea>
               </div>
             <div class="form-group">

@@ -1,5 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-24 08:00:18
+<?php /* Smarty version 2.6.28, created on 2013-12-27 07:55:06
          compiled from index%5Cindex.phtml */ ?>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 116, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -102,30 +104,46 @@ unset($_smarty_tpl_vars);
               </div>
             </div>
           </div>
-
+          <?php $_from = $this->_tpl_vars['arts']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['art']):
+?>
           <div class="row jt-mt-20">
             <div class="col-md-12 clearfix">
      
                 <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
+                  <a href="/people/so898" class="pull-left"><img src="<?php echo $this->_tpl_vars['art']['avatar']; ?>
+" alt="" class="jt-avatar-40 img-rounded"></a>
+                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;<?php echo $this->_tpl_vars['art']['like']; ?>
+&nbsp;&nbsp;</button>
                 </div>
                 <div class="jt-ml-48">
                   <div>
                     <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
+                      <a href="/people/so898" class="text-muted"><small><?php echo $this->_tpl_vars['art']['user_name']; ?>
+</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
                       <span class="pull-right text-muted">精选内容</span>
                     </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
+                    <p><a href="#"><strong><?php echo $this->_tpl_vars['art']['title']; ?>
+</strong></a></p>
+                    <p class="content-descript clearfix">
+                      <?php if ($this->_tpl_vars['art']['imgs']): ?>
+                      <img src="<?php echo ((is_array($_tmp=$this->_tpl_vars['art']['imgs'])) ? $this->_run_mod_handler('img', true, $_tmp) : Funs_Base::img_modifier($_tmp)); ?>
+" class="content-img">
+                      <?php endif; ?>
+                      <?php echo $this->_tpl_vars['art']['descript']; ?>
+… <a href="javascript:void(0);" target="_blank" class="show-all">显示全部</a>
+                      <textarea class="content hidden"><?php echo $this->_tpl_vars['art']['content']; ?>
+</textarea>
                       
                     </p>
                   </div>
                   <div>
                     <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
 
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
+                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共<?php echo $this->_tpl_vars['art']['comment']; ?>
+条评论</a>
+
+                    <a class="content-handup text-muted jt-ml-10 pull-right hide" href="javascript:void(0);"><span class="glyphicon glyphicon-open"></span>&nbsp;收起</a>
                   </div>
                 </div>
                 <hr>
@@ -133,135 +151,7 @@ unset($_smarty_tpl_vars);
             
 
           </div>
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
+          <?php endforeach; endif; unset($_from); ?>
         </div>
 
         <div class="col-md-4">

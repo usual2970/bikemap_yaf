@@ -27,6 +27,7 @@ class Smarty_Adapter implements Yaf_View_Interface
             $this->_smarty->$key = $value;
         }
         $conf=Yaf_Registry::get("config")->get("site")->toArray();
+        $this->_smarty->register_modifier("img",array("Funs_Base","img_modifier"));
         foreach($conf as $k=>$v){
             $this->_smarty->assign($k,$v);
         }

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-24 08:00:17
+<?php /* Smarty version 2.6.28, created on 2013-12-27 02:36:24
          compiled from material%5Cindex.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -104,7 +104,7 @@ $(document).ready(function(){
 
     );
 
-    $("#delimg").click(function(){
+    $(document).on("click","#delimg",function(){
       var id=$(this).attr("data-id");
       $.get("/material/delimg/id/"+id,function(){
         window.location.reload();

@@ -1,21 +1,13 @@
 <?php
-/**
- * @name IndexController
- * @author root
- * @desc 默认控制器
- * @see http://www.php.net/manual/en/class.yaf-controller-abstract.php
- */
 class IndexController extends Ctrl_Base {
-
-	/** 
-     * 默认动作
-     * Yaf支持直接把Yaf_Request_Abstract::getParam()得到的同名参数作为Action的形参
-     * 对于如下的例子, 当访问http://yourhost/sample/index/index/index/name/root 的时候, 你就会发现不同
-     */
 	public function indexAction($name = "Stranger") {
-		//var_dump($this);exit();
-		//4. render by Yaf, 如果这里返回FALSE, Yaf将不会调用自动视图引擎Render模板
-
+		$art_obj=new ArticleModel();
+		$rs=$art_obj->field("jt_article.id,jt_article.content,jt_article.title,jt_article.descript,jt_article.imgs,jt_user.user_name,jt_user.avatar,jt_article.comment,jt_article.like")
+					->join("jt_user","jt_article.user_id=jt_user.id","left")
+					->order("jt_article.id desc")
+					->limit("0,20")
+					->fList();
+		$this->assign("arts",$rs);
         $this->display("index");
 	}
 

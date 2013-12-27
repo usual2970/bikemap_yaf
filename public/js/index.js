@@ -51,6 +51,16 @@
       })
     }, 100)
 
+
+    $(document).off("click",".show-all").on("click",".show-all",function(){
+      var content=$(this).siblings(".content").val();
+      $(this).parent().addClass("hide").after(content);
+      $(this).parents(".jt-ml-48").find(".content-handup").removeClass("hide");
+    });
+
+     $(document).off("click",".content-handup").on("click",".content-handup",function(){
+      $(this).addClass("hide").parents(".jt-ml-48").find(".content-descript").removeClass("hide").nextAll().remove();
+    });
     
 })
 

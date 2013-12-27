@@ -35,9 +35,10 @@ class TravelController extends Ctrl_Base {
 			if(!$title ||!$content){
 				exit("标题或内容为空");
 			}
-			if(!$desc){
+			if(!$descript){
 				$pure_text=preg_replace("/\<.+?\>/i","", $content);
-				$desc=substr($pure_text, 0,360);
+				preg_match("/(.{510}).*/is",$pure_text,$match);
+				$descript=$match[1];
 			}
 			preg_match_all("/\<img.*?src=\"(.*?)\".*?\>/i", $content, $matches);
 			if($matches){
@@ -51,10 +52,10 @@ class TravelController extends Ctrl_Base {
 				"map_id"=>$map_id,
 				"content"=>mysql_real_escape_string($content),
 				"tags"=>$tags,
-				"`desc`"=>$desc,
+				"descript"=>$descript,
 				"imgs"=>$imgs,
 				"add_time"=>time(),
-				"`status`"=>0,
+				"state"=>0,
 				"user_id"=>$_SESSION["id"]
 			);
 			$art_obj=new ArticleModel();
@@ -85,9 +86,10 @@ class TravelController extends Ctrl_Base {
 			if(!$title ||!$content){
 				exit("标题或内容为空");
 			}
-			if(!$desc){
+			if(!$descript){
 				$pure_text=preg_replace("/\<.+?\>/i","", $content);
-				$desc=substr($pure_text, 0,360);
+				preg_match("/(.{510}).*/is",$pure_text,$match);
+				$descript=$match[1];
 			}
 			preg_match_all("/\<img.*?src=\"(.*?)\".*?\>/i", $content, $matches);
 			if($matches){
@@ -101,10 +103,10 @@ class TravelController extends Ctrl_Base {
 				"map_id"=>$map_id,
 				"content"=>mysql_real_escape_string($content),
 				"tags"=>$tags,
-				"`desc`"=>$desc,
+				"descript"=>$descript,
 				"imgs"=>$imgs,
 				"edit_time"=>time(),
-				"`status`"=>0,
+				"state"=>0,
 				"user_id"=>$_SESSION["id"]
 			);
 			$art_obj=new ArticleModel();

@@ -96,30 +96,36 @@
               </div>
             </div>
           </div>
-
+          `foreach from=$arts item=art~
           <div class="row jt-mt-20">
             <div class="col-md-12 clearfix">
      
                 <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
+                  <a href="/people/so898" class="pull-left"><img src="`$art.avatar~" alt="" class="jt-avatar-40 img-rounded"></a>
+                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;`$art.like~&nbsp;&nbsp;</button>
                 </div>
                 <div class="jt-ml-48">
                   <div>
                     <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
+                      <a href="/people/so898" class="text-muted"><small>`$art.user_name~</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
                       <span class="pull-right text-muted">精选内容</span>
                     </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
+                    <p><a href="#"><strong>`$art.title~</strong></a></p>
+                    <p class="content-descript clearfix">
+                      `if $art.imgs~
+                      <img src="`$art.imgs|img~" class="content-img">
+                      `/if~
+                      `$art.descript~… <a href="javascript:void(0);" target="_blank" class="show-all">显示全部</a>
+                      <textarea class="content hidden">`$art.content~</textarea>
                       
                     </p>
                   </div>
                   <div>
                     <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
 
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
+                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共`$art.comment~条评论</a>
+
+                    <a class="content-handup text-muted jt-ml-10 pull-right hide" href="javascript:void(0);"><span class="glyphicon glyphicon-open"></span>&nbsp;收起</a>
                   </div>
                 </div>
                 <hr>
@@ -127,135 +133,7 @@
             
 
           </div>
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-12 clearfix">
-     
-                <div class="pull-left jt-wt-40">
-                  <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;11&nbsp;&nbsp;</button>
-                </div>
-                <div class="jt-ml-48">
-                  <div>
-                    <div class="text-muted">
-                      <a href="/people/so898" class="text-muted"><small>刘旋尧</small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
-                      <span class="pull-right text-muted">精选内容</span>
-                    </div>
-                    <p><a href="#"><strong>iOS 设备越狱合法吗，为什么苹果公司的激活服务器不封禁有过越狱行为的设备？</strong></a></p>
-                    <p>
-                      根据美国法律，iOS 设备的越狱是合法的。 美国禁止破坏 DRM 的行为，但是美国最高法院解释说 iOS 越狱是为了在消费者自己的机器上运行设备制造商不允许的软件，不属于破坏 DRM。 但是破坏蓝光 DVD 的解密就被认为是企图播放盗版。同样越狱 Kindle 等电子书阅… <a href="#">显示全部</a>
-                      
-                    </p>
-                  </div>
-                  <div>
-                    <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
-
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共12条评论</a>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            
-
-          </div>
-
-
+          `/foreach~
         </div>
 
         <div class="col-md-4">

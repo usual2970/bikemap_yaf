@@ -373,6 +373,13 @@ static function test_txt($txt,$len=60){
     $pat="/\w".$len."/";
     return preg_match($pat,$txt);
 }
+
+
+static function img_modifier($str){
+    if(!$str) return "";
+    $rs=explode(",", $str);
+    return $rs[0];
+}
 }
 
 ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-27 02:10:07
+<?php /* Smarty version 2.6.28, created on 2013-12-27 02:46:32
          compiled from travel%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'date_format', 'travel\\index.phtml', 42, false),)), $this); ?>
@@ -68,7 +68,7 @@ unset($_smarty_tpl_vars);
                     <a href="<?php echo $this->_tpl_vars['url']; ?>
 /travel/edit/id/<?php echo $this->_tpl_vars['art']['id']; ?>
 " class="text-muted" data-id="<?php echo $this->_tpl_vars['art']['id']; ?>
-" target="_blank"><span class="glyphicon glyphicon-edit"></span>编辑</a>&nbsp;&nbsp;
+" target="_self"><span class="glyphicon glyphicon-edit"></span>编辑</a>&nbsp;&nbsp;
                     <a href="javascript:void(0);" class="text-muted" id="delart" data-id="<?php echo $this->_tpl_vars['art']['id']; ?>
 "><span class="glyphicon glyphicon-trash"></span>删除</a>&nbsp;&nbsp;
                   

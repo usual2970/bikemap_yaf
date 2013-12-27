@@ -82,7 +82,7 @@ $(document).ready(function(){
 
     );
 
-    $("#delimg").click(function(){
+    $(document).on("click","#delimg",function(){
       var id=$(this).attr("data-id");
       $.get("/material/delimg/id/"+id,function(){
         window.location.reload();
