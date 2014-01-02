@@ -1,14 +1,18 @@
+<<<<<<< HEAD
 <?php /* Smarty version 2.6.28, created on 2013-12-30 01:44:04
+=======
+<?php /* Smarty version 2.6.28, created on 2013-12-28 09:06:47
+>>>>>>> 10e65c7494d1ff8dad485e1cf363c2464736f870
          compiled from index%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 116, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 33, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
     <!--内容-->
-    <div class="container" style="margin-top:70px;">
+    <div class="container" style="margin-top:40px;">
       <div class="row">
         <div class="col-md-8">
 
@@ -17,103 +21,20 @@ unset($_smarty_tpl_vars);
                   <p class="text-muted"><span class="glyphicon glyphicon-list-alt"></span> <b>&nbsp;最新动态</b></p>
               </div>
               <div class="col-md-2">
-                <p class="text-muted"><span class="glyphicon glyphicon-cog"></span>&nbsp;<small>设置</small></p>
+                <p class="text-muted text-right"><span class="glyphicon glyphicon-cog"></span>&nbsp;<small>设置</small></p>
               </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="jt-bt">
-                <p class="text-muted pager">你的首页暂时还没有内容，多关注些人吧 <a href="#">换一批</a>·<a href="#">更多推荐</a></p>
-                <table class="table table-bordered">
-                  <tr>
-                    <td width="33.3%">
-                      <div class="suggest-item-inner">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                            <div class="pull-left jt-ml-10">
-                              <a href="/people/so898" class="item-link">Bill Cheng</a>
-                              <p class="text-muted">517 个回答</p>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="text-muted jt-details">
-                          <small>是一只死掉的考拉，大家不用在意</small>
-                        </div>
-                        <hr class="devider hr-medium">
-                        <div class="text-center jt-summary">
-                          互联网 · 科技 · 创业领域活跃用户
-                        </div>
-                        <div class="text-right">
-                          <button class="btn btn-success btn-xs">&nbsp;关注&nbsp;</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td width="33.3%">
-                      <div class="suggest-item-inner">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                            <div class="pull-left jt-ml-10">
-                              <a href="/people/so898" class="item-link">Bill Cheng</a>
-                              <p class="text-muted">517 个回答</p>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="text-muted jt-details">
-                          <small>是一只死掉的考拉，大家不用在意</small>
-                        </div>
-                        <hr class="devider hr-medium">
-                        <div class="text-center jt-summary">
-                          互联网 · 科技 · 创业领域活跃用户
-                        </div>
-                        <div class="text-right">
-                          <button class="btn btn-success btn-xs">&nbsp;关注&nbsp;</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td width="33.3%">
-                      <div class="suggest-item-inner">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <a href="/people/so898" class="pull-left"><img src="http://p2.zhimg.com/0e/b5/0eb52fe6f_m.jpg" alt="" class="jt-avatar-40 img-rounded"></a>
-                            <div class="pull-left jt-ml-10">
-                              <a href="/people/so898">Bill Cheng</a>
-                              <p class="text-muted">517 个回答</p>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="text-muted jt-details">
-                          <small>是一只死掉的考拉，大家不用在意</small>
-                        </div>
-                        <hr class="devider hr-medium">
-                        <div class="text-center jt-summary">
-                          互联网 · 科技 · 创业领域活跃用户
-                        </div>
-                        <div class="text-right">
-                          <button class="btn btn-success btn-xs">&nbsp;关注&nbsp;</button>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                </table>
-              </div>
-            </div>
-          </div>
+          
           <?php $_from = $this->_tpl_vars['arts']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['art']):
 ?>
-          <div class="row jt-mt-20">
-            <div class="col-md-12 clearfix">
+          <div class="row jt-mt-10 jt-bt-1">
+            <div class="col-md-12 clearfix jt-mt-10">
      
                 <div class="pull-left jt-wt-40">
                   <a href="/people/so898" class="pull-left"><img src="<?php echo $this->_tpl_vars['art']['avatar']; ?>
 " alt="" class="jt-avatar-40 img-rounded"></a>
-                  <button type="button" class="btn btn-xs jt-mt-10 btn-info">&nbsp;&nbsp;<?php echo $this->_tpl_vars['art']['like']; ?>
+                  <button type="button" class="btn btn-xs jt-mt-10 btn-info" title="赞">&nbsp;&nbsp;<?php echo $this->_tpl_vars['art']['like']; ?>
 &nbsp;&nbsp;</button>
                 </div>
                 <div class="jt-ml-48">
@@ -123,7 +44,9 @@ unset($_smarty_tpl_vars);
 </small></a>*<a href="#" class="text-muted"><small>关注TA</small></a>
                       <span class="pull-right text-muted">精选内容</span>
                     </div>
-                    <p><a href="#"><strong><?php echo $this->_tpl_vars['art']['title']; ?>
+                    <p><a href="<?php echo $this->_tpl_vars['url']; ?>
+/index/note/id/<?php echo $this->_tpl_vars['art']['id']; ?>
+" target="_blank"><strong><?php echo $this->_tpl_vars['art']['title']; ?>
 </strong></a></p>
                     <p class="content-descript clearfix">
                       <?php if ($this->_tpl_vars['art']['imgs']): ?>
@@ -146,7 +69,6 @@ unset($_smarty_tpl_vars);
                     <a class="content-handup text-muted jt-ml-10 pull-right hide" href="javascript:void(0);"><span class="glyphicon glyphicon-open"></span>&nbsp;收起</a>
                   </div>
                 </div>
-                <hr>
             </div>
             
 
@@ -183,6 +105,17 @@ unset($_smarty_tpl_vars);
             <div class="jt-ml-10">
               
               <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;出行都是为了获得一段美好的体验，带上一副好心情traveling light,既然是traveling light,就一定要轻，带上足够的银子，几件换洗的衣服，就果断出发吧，千万别上山背石头哦。。。</p>
+            </div>
+            
+          </div>
+
+          <hr>
+          <p class="jt-pl-10"><b>赞助商</b></p>
+
+          <div class="clearfix">
+            <div class="jt-ml-10">
+              
+              <p class="text-muted"><a href="http://s.click.taobao.com/t?e=m%3D2%26s%3DEOjMP%2FZdglccQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAhaeD7ZFp2KhmCBgKg63Ff9YU0kl1dGVYgbAqy1VXNRYqgOH9%2Fz8vrH6G2ObSgSB3%2Bdn1BbglxZYxUhy8exlzcq9AmARIwX9K%2BnbtOD3UdznPV1H2z0iQv%2FtmSjxrhnChg%3D%3D" target="_blank"><img src="http://gtms01.alicdn.com/tps/i1/T1vEJoFrFbXXcg0_ET-336-280.jpg" /></a></iframe></p>
             </div>
             
           </div>
