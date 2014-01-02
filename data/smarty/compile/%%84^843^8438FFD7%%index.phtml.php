@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?php /* Smarty version 2.6.28, created on 2013-12-30 01:44:04
-=======
-<?php /* Smarty version 2.6.28, created on 2013-12-28 09:06:47
->>>>>>> 10e65c7494d1ff8dad485e1cf363c2464736f870
+<?php /* Smarty version 2.6.28, created on 2014-01-02 03:10:16
          compiled from index%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 33, false),)), $this); ?>
@@ -45,7 +41,7 @@ unset($_smarty_tpl_vars);
                       <span class="pull-right text-muted">精选内容</span>
                     </div>
                     <p><a href="<?php echo $this->_tpl_vars['url']; ?>
-/index/note/id/<?php echo $this->_tpl_vars['art']['id']; ?>
+/note/index/id/<?php echo $this->_tpl_vars['art']['id']; ?>
 " target="_blank"><strong><?php echo $this->_tpl_vars['art']['title']; ?>
 </strong></a></p>
                     <p class="content-descript clearfix">

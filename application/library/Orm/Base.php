@@ -255,8 +255,9 @@ class Orm_Base{
 		$tOpt = $pId? $this->_options(array('where' => $this->pk . '=' . abs($pId))): $this->_options();
 		$tOpt['where'] = empty($tOpt['where'])? '': ' WHERE ' . $tOpt['where'];
 		$tOpt['order'] = empty($tOpt['order'])? '': ' ORDER BY ' . $tOpt['order'];
+		$this->join && $tJoin = implode(' ', $this->join);
 		# SQL出错时，会报出SQL语句，需要处理
-		if($tResult = $this->query('SELECT ' . $tOpt['field'] . ' FROM ' . $tOpt['table'] . $tOpt['where'] . $tOpt['order'] . ' LIMIT 0,1')){
+		if($tResult = $this->query('SELECT ' . $tOpt['field'] . ' FROM ' . $tOpt['table'] .$tJoin.$tOpt['where'] . $tOpt['order'] . ' LIMIT 0,1')){
 			return $tResult[0];
 		}
 		return array();

@@ -1,0 +1,35 @@
+`include file=index/header.phtml~
+<div class="container" style="margin-top:20px;" id="jt-container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jt-note-right" style="height:300px;">
+				<div class="jt-note-icons">
+					 <a href="`$url~/user/profile/id/`$user_id~" class="jt-note-avatar-link"><img src="`$smarty.session.avatar~" class="jt-note-avatar"></a>
+
+					<p>
+						<h3>
+						<a href="/po" class="text-muted" title="上一篇">
+							<span class="glyphicon glyphicon-fast-backward"></span>
+						</a>
+						&nbsp;&nbsp;
+						<a href="/po" class="text-muted" title="下一篇">
+							<span class="glyphicon glyphicon-fast-forward"></span>
+						</a></h3>
+					</p>
+				</div>
+			</div>
+			<div class="panel panel-default" style="margin-right:200px;padding:30px;">
+				<p class="h3 text-left">`$art.title~</p>
+				<p>
+
+					`$art.content~
+
+				</p>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+<script src="`$url~/js/note.js"></script>
+`include file=index/footer.phtml~
