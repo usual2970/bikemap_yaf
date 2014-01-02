@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2013-12-27 07:55:06
+<?php /* Smarty version 2.6.28, created on 2013-12-30 01:44:04
          compiled from index%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 116, false),)), $this); ?>
@@ -131,7 +131,7 @@ unset($_smarty_tpl_vars);
 " class="content-img">
                       <?php endif; ?>
                       <?php echo $this->_tpl_vars['art']['descript']; ?>
-… <a href="javascript:void(0);" target="_blank" class="show-all">显示全部</a>
+… <a href="javascript:void(0);" class="show-all">显示全部</a>
                       <textarea class="content hidden"><?php echo $this->_tpl_vars['art']['content']; ?>
 </textarea>
                       
