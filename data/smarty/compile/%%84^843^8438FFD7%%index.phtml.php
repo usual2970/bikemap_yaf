@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2014-01-02 03:10:16
+<?php /* Smarty version 2.6.28, created on 2014-01-03 08:59:09
          compiled from index%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 33, false),)), $this); ?>
@@ -56,14 +56,18 @@ unset($_smarty_tpl_vars);
                       
                     </p>
                   </div>
-                  <div>
+                  <div id="art-bar" data-id="<?php echo $this->_tpl_vars['art']['id']; ?>
+">
                     <a class="text-muted" href="#"><span class="glyphicon glyphicon-plus"></span>&nbsp;收藏路线</a>
 
-                    <a class="text-muted jt-ml-10" href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;共<?php echo $this->_tpl_vars['art']['comment']; ?>
+                    <a class="text-muted jt-ml-10" href="javascript:void(0);" id="jt-comment-show"><span class="glyphicon glyphicon-comment"></span>&nbsp;共<?php echo $this->_tpl_vars['art']['comment']; ?>
 条评论</a>
 
                     <a class="content-handup text-muted jt-ml-10 pull-right hide" href="javascript:void(0);"><span class="glyphicon glyphicon-open"></span>&nbsp;收起</a>
                   </div>
+
+                  
+
                 </div>
             </div>
             
@@ -120,6 +124,61 @@ unset($_smarty_tpl_vars);
 
 
     </div>
+    <script id="jt-comment-tpl" type="text/template">
+      <!--评论内容-->
+      <div class="jt-comment-box">
+        <i class="jt-icon jt-icon-top"></i>
+        <div class="panel panel-default jt-comment-body">
+          {@each data as item}
+          <div class="clearfix jt-comment-unit">
+            <div style="float:left;">
+              <img src="${item.avatar}" style="width:38px;height:38px;">
+            </div>
+            <div style="margin-left:50px;">
+              <p><a href="#">${item.user_name}</a></p>
+              <p>${item.content}</p>
+              <p>
+                <span class="text-muted">${item.add_time}</span>
+                &nbsp;&nbsp;
+                <a href="javascript:void(0)" class="text-muted" id="jt-reply">
+                  <span class="glyphicon glyphicon-share-alt"></span>&nbsp;回复
+                </a>
+                &nbsp;&nbsp;
+                <a href="javascript:void(0)" class="text-muted" id="jt-like">
+                  <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;赞
+                </a>
+              </p>
+            </div>
+          </div>
+          {@/each}
+
+          <div class="jt-comment-foot">
+            <form>
+              <div style="display:none;">
+                <input type="hidden" name="id" value="${id}"/>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="jt-comment">评论</label>
+                <input type="text" class="form-control" name="content" placeholder="写下你的评论...">
+              </div>
+              <div class="form-group clearfix text-right" id="jt-comment-bar">
+                
+                  <a href="javascript:void(0);" id="jt-comment-cancel">取消</a>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="jt-comment">评论</button>
+                
+              </div>
+            </form>
+          </div>
+          
+
+        </div>
+      </div>
+      <!--评论内容-->
+
+    </script>
+    <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/juicer.js"></script>
+    <script src="<?php echo $this->_tpl_vars['url']; ?>
+/js/list.js"></script>
     <!--底部-->
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/footer.phtml", 'smarty_include_vars' => array()));

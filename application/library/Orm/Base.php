@@ -225,7 +225,26 @@ class Orm_Base{
 		}
 		return false;
 	}
+	/**
+	 * 增加指定字段
+	 */
+	function addField($pData){
+		# 过滤
+		if(!$this->_filter($pData)) return false;
+		# 条件
+		$tOpt = array();
+		if(array_key_exists($this->pk, $pData)){
+			$tOpt = array('where' => "$this->pk='{$pData[$this->pk]}'");
+		}
 
+		$tOpt = $this->_options($tOpt);
+		# 更新
+		if($pData && !empty($tOpt['where'])){
+			foreach($pData as $k1 => $v1) $tSet[] = "$k1=$k1+$v1";
+			return $this->exec("UPDATE " . $tOpt['table'] . " SET " . join(',', $tSet) . " WHERE " . $tOpt['where']);
+		}
+		return false;
+	}
 	/**
 	 * 删除记录
 	 */

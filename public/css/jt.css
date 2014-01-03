@@ -113,3 +113,13 @@ border-bottom-color: #fff;
 }
 
 .jt-note-avatar{width:128px;height: 128px;}
+
+
+.jt-icon{background: url(../img/icons.png) no-repeat;}
+.jt-icon-top{position: absolute;width: 13px;height: 8px;background-position: -200px -165px;top:3px;left:130px;}
+
+.jt-comment-box{position:relative;padding: 10px 0;}
+
+.jt-comment-unit{border-bottom: 1px solid #eee;padding:5px 0;}
+.jt-comment-body{padding:10px;}
+.jt-comment-foot{padding:10px 20px;}

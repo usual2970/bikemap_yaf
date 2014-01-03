@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2014-01-02 07:54:52
+<?php /* Smarty version 2.6.28, created on 2014-01-03 01:55:30
          compiled from note%5Cnote.phtml */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "index/header.phtml", 'smarty_include_vars' => array()));
@@ -12,7 +12,7 @@ unset($_smarty_tpl_vars);
 				<div class="jt-note-icons">
 					 <a href="<?php echo $this->_tpl_vars['url']; ?>
 /user/profile/id/<?php echo $this->_tpl_vars['user_id']; ?>
-" class="jt-note-avatar-link"><img src="<?php echo $_SESSION['avatar']; ?>
+" class="jt-note-avatar-link"><img src="<?php echo $this->_tpl_vars['art']['avatar']; ?>
 " class="jt-note-avatar"></a>
 
 					<p>
