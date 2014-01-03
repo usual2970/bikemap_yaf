@@ -31,7 +31,6 @@ jtComment.prototype={
 			$.get(site_url+"/note/getcomm/id/"+id,function(rs){
 				rs=eval("("+rs+")");
 				var tpl=$("#jt-comment-tpl").html();
-				console.log(tpl);
 				var html=juicer(tpl,{id:id,data:rs.data});
 
 				$(obj).parents(".jt-ml-48").append(html);

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2014-01-03 08:59:09
+<?php /* Smarty version 2.6.28, created on 2014-01-03 09:22:19
          compiled from index%5Cindex.phtml */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'img', 'index\\index.phtml', 33, false),)), $this); ?>
@@ -161,7 +161,7 @@ unset($_smarty_tpl_vars);
                 <label class="sr-only" for="jt-comment">评论</label>
                 <input type="text" class="form-control" name="content" placeholder="写下你的评论...">
               </div>
-              <div class="form-group clearfix text-right" id="jt-comment-bar">
+              <div class="form-group clearfix text-right" id="jt-comment-bar" style="display:none;">
                 
                   <a href="javascript:void(0);" id="jt-comment-cancel">取消</a>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary" id="jt-comment">评论</button>
                 
