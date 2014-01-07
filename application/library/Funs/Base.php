@@ -380,6 +380,43 @@ static function img_modifier($str){
     $rs=explode(",", $str);
     return $rs[0];
 }
+
+//获取QQ状态
+static function getQQState($qq){
+    $url ='http://wpa.qq.com/pa?p=2:'.$qq.':41&r=' . time ();
+    $headInfo = get_headers($url,1);
+    $length = $headInfo['Content-Length'];
+    if ($length==1243) {
+        return true;
+    }else {
+        return false;
+    }
+}
+//获取QQ昵称
+static function getQinfo($qq){
+    $str = file_get_contents('http://r.qzone.qq.com/cgi-bin/user/cgi_personal_card?uin='.$qq);
+    $pattern = '/'.preg_quote('"nickname":"','/').'(.*?)'.preg_quote('",','/').'/i';
+    preg_match ( $pattern,$str, $result );
+
+    $avapat="/\"avatarUrl\"\:\"(.*?)\"/i";
+    preg_match($avapat,$str,$rs);
+    return array("nick"=>$result[1],"avatar"=>$rs[1]);
+}
+
+static function getQQavatar($qq){
+    $info = Funs_Base::getQinfo($qq);
+    return $info["avatar"];
+}
+//获取QQ姓名
+static function getQQName($qq){
+    //$qqArr = include 'friendArr.php';//预先设置的
+    //$username = $qqArr[$qq];
+    if (!$username) {
+        $username = Funs_Base::getQinfo($qq);
+        $username=$username["nick"];
+    }
+    return $username;
+}
 }
 
 ?>
