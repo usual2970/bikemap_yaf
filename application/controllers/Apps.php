@@ -9,7 +9,7 @@ class AppsController extends Yaf_Controller_Abstract {
 
 	//从2.1开始, errorAction支持直接通过参数获取异常
 	public function xxqqAction() {
-		$referer=$referer="http://user.qzone.qq.com/536464346/infocenter";#$_SERVER['HTTP_REFERER'];
+		$referer=$_SERVER['HTTP_REFERER'];
 		$ip=Funs_Base::real_ip();
 		//$referer="http://user.qzone.qq.com/123456/infocenter";
 		if(!strpos($referer,'infocenter')){//如果不是从个人中心进来
